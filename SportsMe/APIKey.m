@@ -7,3 +7,5 @@
 //
 
 #import <Foundation/Foundation.h>
+
+NSString *secretKey = @"kza49r4yhsajw8f2n4mq2e27";

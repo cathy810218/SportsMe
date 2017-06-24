@@ -8,6 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+typedef NS_ENUM(NSUInteger, SMSportsType) {
+    SMSportsTypeESport,
+    SMSportsTypeNFL,
+    SMSportsTypeMLB,
+    SMSportsTypeNBA,
+    SMSportsTypeMLS
+};
+
 @interface SportsAPI : NSObject
 
 @end
