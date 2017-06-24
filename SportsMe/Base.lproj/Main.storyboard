@@ -93,41 +93,11 @@
                     <navigationItem key="navigationItem" title="Categories" id="STe-3h-glI"/>
                     <connections>
                         <outlet property="collectionView" destination="77J-cG-Up7" id="Nhu-kC-PFf"/>
-                        <segue destination="1Zl-Ss-Q5K" kind="show" identifier="GameMatchesViewController" id="lxc-eu-4q5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZQG-4x-Yru" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1621.5999999999999" y="-645.42728635682158"/>
-        </scene>
-        <!--Game Matches-->
-        <scene sceneID="JFT-tc-9sX">
-            <objects>
-                <viewController id="1Zl-Ss-Q5K" customClass="GameMatchesViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="8yq-rs-8O0"/>
-                        <viewControllerLayoutGuide type="bottom" id="VAA-ms-TEU"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ec4-qU-JvZ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0uN-Rg-cIc">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Game Matches" id="yDO-fS-ICW"/>
-                    <connections>
-                        <outlet property="tableView" destination="0uN-Rg-cIc" id="flF-VB-2oN"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="z74-wq-mqC" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2384.8000000000002" y="-645.42728635682158"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="HZa-ch-lqL">
