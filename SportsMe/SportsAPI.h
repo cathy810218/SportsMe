@@ -16,6 +16,8 @@ typedef NS_ENUM(NSUInteger, SMSportsType) {
     SMSportsTypeMLS
 };
 
-@interface SportsAPI : NSObject
+@interface SportsAPI : NSObject 
+
+-(void)beginParsing;
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "MainViewController.h"
+#import "SportsAPI.h"
 
 @interface MainViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -17,6 +18,8 @@
 @implementation MainViewController
 
 - (void)viewDidLoad {
+    SportsAPI *sportsAPI = [[SportsAPI alloc] init];
+    [sportsAPI beginParsing];
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
 }

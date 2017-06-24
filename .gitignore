@@ -13,7 +13,7 @@ Pods/
 *.DS_Store
 .AppleDouble
 .LSOverride
-SportsMe/APIKey.m
+SportsMe/APIKeys.m
 
 # Icon must end with two \r
 Icon
