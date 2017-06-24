@@ -20,6 +20,7 @@
 		3DBA9F941EFEEE53003A7721 /* CategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DBA9F931EFEEE53003A7721 /* CategoriesViewController.m */; };
 		71E5C0321EFF0E890011A455 /* SportsAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 71E5C0311EFF0E890011A455 /* SportsAPI.m */; };
 		7BFB7AA29AEB654BF0D5F4AC /* libPods-SportsMeTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C104C4FAF7E6A313D8118C97 /* libPods-SportsMeTests.a */; };
+		CD1DC30E1EFF2F3E00E89E51 /* BaseballAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = CD1DC30D1EFF2F3E00E89E51 /* BaseballAPI.m */; };
 		CD970AAB1EFF220A00BE5299 /* APIKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = CD970AAA1EFF220A00BE5299 /* APIKeys.m */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +60,8 @@
 		89909EC881712634EC2B9E6F /* libPods-SportsMe.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SportsMe.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C104C4FAF7E6A313D8118C97 /* libPods-SportsMeTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SportsMeTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5B92F6DB2C9F58CE0396C6E /* Pods-SportsMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportsMe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SportsMe/Pods-SportsMe.debug.xcconfig"; sourceTree = "<group>"; };
+		CD1DC30C1EFF2F3E00E89E51 /* BaseballAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseballAPI.h; sourceTree = "<group>"; };
+		CD1DC30D1EFF2F3E00E89E51 /* BaseballAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseballAPI.m; sourceTree = "<group>"; };
 		CD970AA91EFF220A00BE5299 /* APIKeys.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIKeys.h; sourceTree = "<group>"; };
 		CD970AAA1EFF220A00BE5299 /* APIKeys.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APIKeys.m; sourceTree = "<group>"; };
 		E01174D67A87FDD781492DB6 /* Pods-SportsMeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportsMeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SportsMeTests/Pods-SportsMeTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -185,6 +188,8 @@
 			children = (
 				71E5C0301EFF0E890011A455 /* SportsAPI.h */,
 				71E5C0311EFF0E890011A455 /* SportsAPI.m */,
+				CD1DC30C1EFF2F3E00E89E51 /* BaseballAPI.h */,
+				CD1DC30D1EFF2F3E00E89E51 /* BaseballAPI.m */,
 			);
 			name = APIs;
 			sourceTree = "<group>";
@@ -402,6 +407,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD1DC30E1EFF2F3E00E89E51 /* BaseballAPI.m in Sources */,
 				3D5B61351EFEE2B0001DB05A /* MainViewController.m in Sources */,
 				71E5C0321EFF0E890011A455 /* SportsAPI.m in Sources */,
 				CD970AAB1EFF220A00BE5299 /* APIKeys.m in Sources */,
