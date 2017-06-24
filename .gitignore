@@ -58,6 +58,8 @@ $RECYCLE.BIN/
 *.lnk
 
 ### Xcode Patch ###
+*.xcuserstate
+xcuserdata/
 !*.xcworkspace/contents.xcworkspacedata
 /*.gcno
 
