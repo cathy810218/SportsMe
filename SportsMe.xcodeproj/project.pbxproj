@@ -17,6 +17,8 @@
 		3D5B61481EFEE2B0001DB05A /* SportsMeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D5B61471EFEE2B0001DB05A /* SportsMeTests.m */; };
 		3D5B61561EFEE73C001DB05A /* GameMatchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D5B61551EFEE73C001DB05A /* GameMatchCell.xib */; };
 		3D5B61591EFEE9B5001DB05A /* GameMatchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D5B61581EFEE9B5001DB05A /* GameMatchCell.m */; };
+		3D69F7B01EFF064500D16898 /* CategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D69F7AE1EFF064500D16898 /* CategoryCell.m */; };
+		3D69F7B11EFF064500D16898 /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D69F7AF1EFF064500D16898 /* CategoryCell.xib */; };
 		3DBA9F941EFEEE53003A7721 /* CategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DBA9F931EFEEE53003A7721 /* CategoriesViewController.m */; };
 		7BFB7AA29AEB654BF0D5F4AC /* libPods-SportsMeTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C104C4FAF7E6A313D8118C97 /* libPods-SportsMeTests.a */; };
 /* End PBXBuildFile section */
@@ -50,6 +52,9 @@
 		3D5B61551EFEE73C001DB05A /* GameMatchCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameMatchCell.xib; sourceTree = "<group>"; };
 		3D5B61571EFEE9B5001DB05A /* GameMatchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameMatchCell.h; sourceTree = "<group>"; };
 		3D5B61581EFEE9B5001DB05A /* GameMatchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameMatchCell.m; sourceTree = "<group>"; };
+		3D69F7AD1EFF064500D16898 /* CategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryCell.h; sourceTree = "<group>"; };
+		3D69F7AE1EFF064500D16898 /* CategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryCell.m; sourceTree = "<group>"; };
+		3D69F7AF1EFF064500D16898 /* CategoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
 		3DBA9F921EFEEE53003A7721 /* CategoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoriesViewController.h; sourceTree = "<group>"; };
 		3DBA9F931EFEEE53003A7721 /* CategoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoriesViewController.m; sourceTree = "<group>"; };
 		89909EC881712634EC2B9E6F /* libPods-SportsMe.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SportsMe.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -155,6 +160,9 @@
 				3D5B61581EFEE9B5001DB05A /* GameMatchCell.m */,
 				3D5B61551EFEE73C001DB05A /* GameMatchCell.xib */,
 				3D5B61361EFEE2B0001DB05A /* Main.storyboard */,
+				3D69F7AD1EFF064500D16898 /* CategoryCell.h */,
+				3D69F7AE1EFF064500D16898 /* CategoryCell.m */,
+				3D69F7AF1EFF064500D16898 /* CategoryCell.xib */,
 				3D5B613B1EFEE2B0001DB05A /* LaunchScreen.storyboard */,
 			);
 			name = View;
@@ -270,6 +278,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D69F7B11EFF064500D16898 /* CategoryCell.xib in Resources */,
 				3D5B613D1EFEE2B0001DB05A /* LaunchScreen.storyboard in Resources */,
 				3D5B61561EFEE73C001DB05A /* GameMatchCell.xib in Resources */,
 				3D5B613A1EFEE2B0001DB05A /* Assets.xcassets in Resources */,
@@ -385,6 +394,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D5B61351EFEE2B0001DB05A /* MainViewController.m in Sources */,
+				3D69F7B01EFF064500D16898 /* CategoryCell.m in Sources */,
 				3D5B61591EFEE9B5001DB05A /* GameMatchCell.m in Sources */,
 				3D5B61321EFEE2B0001DB05A /* AppDelegate.m in Sources */,
 				3DBA9F941EFEEE53003A7721 /* CategoriesViewController.m in Sources */,
