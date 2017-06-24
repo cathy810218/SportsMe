@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  MainViewController.h
 //  SportsMe
 //
 //  Created by Cathy Oun on 6/24/17.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface MainViewController : UIViewController
 
 
 @end

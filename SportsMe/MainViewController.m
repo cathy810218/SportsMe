@@ -1,18 +1,18 @@
 //
-//  ViewController.m
+//  MainViewController.m
 //  SportsMe
 //
 //  Created by Cathy Oun on 6/24/17.
 //  Copyright © 2017 Cathy Oun. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "MainViewController.h"
 
-@interface ViewController ()
+@interface MainViewController ()
 
 @end
 
-@implementation ViewController
+@implementation MainViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

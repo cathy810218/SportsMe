@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		3D5B612F1EFEE2B0001DB05A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D5B612E1EFEE2B0001DB05A /* main.m */; };
 		3D5B61321EFEE2B0001DB05A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D5B61311EFEE2B0001DB05A /* AppDelegate.m */; };
-		3D5B61351EFEE2B0001DB05A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D5B61341EFEE2B0001DB05A /* ViewController.m */; };
+		3D5B61351EFEE2B0001DB05A /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D5B61341EFEE2B0001DB05A /* MainViewController.m */; };
 		3D5B61381EFEE2B0001DB05A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D5B61361EFEE2B0001DB05A /* Main.storyboard */; };
 		3D5B613A1EFEE2B0001DB05A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D5B61391EFEE2B0001DB05A /* Assets.xcassets */; };
 		3D5B613D1EFEE2B0001DB05A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D5B613B1EFEE2B0001DB05A /* LaunchScreen.storyboard */; };
@@ -31,8 +31,8 @@
 		3D5B612E1EFEE2B0001DB05A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3D5B61301EFEE2B0001DB05A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3D5B61311EFEE2B0001DB05A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		3D5B61331EFEE2B0001DB05A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		3D5B61341EFEE2B0001DB05A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		3D5B61331EFEE2B0001DB05A /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		3D5B61341EFEE2B0001DB05A /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		3D5B61371EFEE2B0001DB05A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3D5B61391EFEE2B0001DB05A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3D5B613C1EFEE2B0001DB05A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -81,14 +81,9 @@
 		3D5B612C1EFEE2B0001DB05A /* SportsMe */ = {
 			isa = PBXGroup;
 			children = (
-				3D5B61301EFEE2B0001DB05A /* AppDelegate.h */,
-				3D5B61311EFEE2B0001DB05A /* AppDelegate.m */,
-				3D5B61331EFEE2B0001DB05A /* ViewController.h */,
-				3D5B61341EFEE2B0001DB05A /* ViewController.m */,
-				3D5B61361EFEE2B0001DB05A /* Main.storyboard */,
-				3D5B61391EFEE2B0001DB05A /* Assets.xcassets */,
-				3D5B613B1EFEE2B0001DB05A /* LaunchScreen.storyboard */,
-				3D5B613E1EFEE2B0001DB05A /* Info.plist */,
+				3D5B61541EFEE440001DB05A /* Controller */,
+				3D5B61531EFEE43C001DB05A /* View */,
+				3D5B61521EFEE42E001DB05A /* Model */,
 				3D5B612D1EFEE2B0001DB05A /* Supporting Files */,
 			);
 			path = SportsMe;
@@ -97,6 +92,10 @@
 		3D5B612D1EFEE2B0001DB05A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3D5B61301EFEE2B0001DB05A /* AppDelegate.h */,
+				3D5B61311EFEE2B0001DB05A /* AppDelegate.m */,
+				3D5B61391EFEE2B0001DB05A /* Assets.xcassets */,
+				3D5B613E1EFEE2B0001DB05A /* Info.plist */,
 				3D5B612E1EFEE2B0001DB05A /* main.m */,
 			);
 			name = "Supporting Files";
@@ -109,6 +108,31 @@
 				3D5B61491EFEE2B0001DB05A /* Info.plist */,
 			);
 			path = SportsMeTests;
+			sourceTree = "<group>";
+		};
+		3D5B61521EFEE42E001DB05A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		3D5B61531EFEE43C001DB05A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3D5B61361EFEE2B0001DB05A /* Main.storyboard */,
+				3D5B613B1EFEE2B0001DB05A /* LaunchScreen.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		3D5B61541EFEE440001DB05A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3D5B61331EFEE2B0001DB05A /* MainViewController.h */,
+				3D5B61341EFEE2B0001DB05A /* MainViewController.m */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,7 +239,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D5B61351EFEE2B0001DB05A /* ViewController.m in Sources */,
+				3D5B61351EFEE2B0001DB05A /* MainViewController.m in Sources */,
 				3D5B61321EFEE2B0001DB05A /* AppDelegate.m in Sources */,
 				3D5B612F1EFEE2B0001DB05A /* main.m in Sources */,
 			);
@@ -420,6 +444,7 @@
 				3D5B614E1EFEE2B0001DB05A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3D5B614F1EFEE2B0001DB05A /* Build configuration list for PBXNativeTarget "SportsMeTests" */ = {
 			isa = XCConfigurationList;
@@ -428,6 +453,7 @@
 				3D5B61511EFEE2B0001DB05A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
