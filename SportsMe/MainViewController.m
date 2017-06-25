@@ -148,4 +148,27 @@
     return str;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+}
+
+-(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath{
+    return TRUE;
+}
+
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+}
+
+-(NSArray<UITableViewRowAction *> *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewRowAction *addToCalendar = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault
+                                                                             title:@"Add to Calendar"
+                                                                           handler:^(UITableViewRowAction *action, NSIndexPath *indexPath)
+                                           {
+                                               
+                                           }];
+    addToCalendar.backgroundColor = [UIColor colorWithRed:0.102 green:0.247 blue:0.392 alpha:1];
+    
+    return @[addToCalendar];
+}
+
 @end
