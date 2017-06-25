@@ -10,6 +10,7 @@
 #import "GameMatchCell.h"
 #import "SportsAPI.h"
 #import "BaseballAPI.h"
+#import "SoccerAPI.h"
 
 @interface MainViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -27,6 +28,8 @@
     
     BaseballAPI *baseball = [[BaseballAPI alloc]init];
     [baseball beginParsing];
+    SoccerAPI *soccer = [[SoccerAPI alloc]init];
+    [soccer beginParsing];
 
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
