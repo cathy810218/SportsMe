@@ -29,6 +29,7 @@
 		3DDA5D491F003998003D9FBA /* MLBTeams.json in Resources */ = {isa = PBXBuildFile; fileRef = 3DDA5D471F003998003D9FBA /* MLBTeams.json */; };
 		3DDA5D4A1F003998003D9FBA /* NBATeams.json in Resources */ = {isa = PBXBuildFile; fileRef = 3DDA5D481F003998003D9FBA /* NBATeams.json */; };
 		3DDA5D4C1F003A99003D9FBA /* NFLTeams.json in Resources */ = {isa = PBXBuildFile; fileRef = 3DDA5D4B1F003A99003D9FBA /* NFLTeams.json */; };
+		3DDA5D4E1F007AA4003D9FBA /* LOLTeams.json in Resources */ = {isa = PBXBuildFile; fileRef = 3DDA5D4D1F007AA4003D9FBA /* LOLTeams.json */; };
 		71E5C0321EFF0E890011A455 /* SportsAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 71E5C0311EFF0E890011A455 /* SportsAPI.m */; };
 		71E5C0381EFF4A1E0011A455 /* LeagueOfLegendsAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 71E5C0371EFF4A1E0011A455 /* LeagueOfLegendsAPI.m */; };
 		71E5C03B1EFF56AA0011A455 /* DotaAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 71E5C03A1EFF56AA0011A455 /* DotaAPI.m */; };
@@ -89,6 +90,7 @@
 		3DDA5D471F003998003D9FBA /* MLBTeams.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MLBTeams.json; sourceTree = "<group>"; };
 		3DDA5D481F003998003D9FBA /* NBATeams.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = NBATeams.json; sourceTree = "<group>"; };
 		3DDA5D4B1F003A99003D9FBA /* NFLTeams.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = NFLTeams.json; sourceTree = "<group>"; };
+		3DDA5D4D1F007AA4003D9FBA /* LOLTeams.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LOLTeams.json; sourceTree = "<group>"; };
 		71E5C0301EFF0E890011A455 /* SportsAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SportsAPI.h; sourceTree = "<group>"; };
 		71E5C0311EFF0E890011A455 /* SportsAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SportsAPI.m; sourceTree = "<group>"; };
 		71E5C0361EFF4A1E0011A455 /* LeagueOfLegendsAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeagueOfLegendsAPI.h; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 				3DDA5D471F003998003D9FBA /* MLBTeams.json */,
 				3DDA5D481F003998003D9FBA /* NBATeams.json */,
 				3DDA5D4B1F003A99003D9FBA /* NFLTeams.json */,
+				3DDA5D4D1F007AA4003D9FBA /* LOLTeams.json */,
 				3D5B613B1EFEE2B0001DB05A /* LaunchScreen.storyboard */,
 				CD970AA91EFF220A00BE5299 /* APIKeys.h */,
 				CD970AAA1EFF220A00BE5299 /* APIKeys.m */,
@@ -378,6 +381,7 @@
 			files = (
 				3DDA5D4A1F003998003D9FBA /* NBATeams.json in Resources */,
 				3D69F7B11EFF064500D16898 /* CategoryCell.xib in Resources */,
+				3DDA5D4E1F007AA4003D9FBA /* LOLTeams.json in Resources */,
 				3D5B613D1EFEE2B0001DB05A /* LaunchScreen.storyboard in Resources */,
 				3D5B61561EFEE73C001DB05A /* GameMatchCell.xib in Resources */,
 				3DDA5D491F003998003D9FBA /* MLBTeams.json in Resources */,

@@ -34,10 +34,6 @@
     self.types = @[@0, @1, @2, @5, @6];
     
     self.esportsView.hidden = YES;
-    
-//    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapToHideEsportsView)];
-//    [self.esportsView addGestureRecognizer:tap];
-//    self.esportsView.userInteractionEnabled = NO;
 }
 
 - (IBAction)dismissEsportsView:(UIButton *)sender {
