@@ -18,14 +18,21 @@
                 <rect key="frame" x="0.0" y="0.0" width="162" height="163"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B2A-eI-BSx">
-                        <rect key="frame" x="-9" y="0.0" width="171" height="163"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" red="0.76710760590000004" green="0.77843081950000004" blue="0.76720792059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </view>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zSR-Wj-dwr">
+                        <rect key="frame" x="0.0" y="0.0" width="162" height="163"/>
+                    </imageView>
                 </subviews>
             </view>
+            <constraints>
+                <constraint firstItem="zSR-Wj-dwr" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="CD9-Up-VCv"/>
+                <constraint firstItem="zSR-Wj-dwr" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="NNP-vW-npr"/>
+                <constraint firstAttribute="bottom" secondItem="zSR-Wj-dwr" secondAttribute="bottom" id="a9R-a0-lkh"/>
+                <constraint firstAttribute="trailing" secondItem="zSR-Wj-dwr" secondAttribute="trailing" id="uUk-yp-65g"/>
+            </constraints>
             <size key="customSize" width="162" height="163"/>
+            <connections>
+                <outlet property="imageView" destination="zSR-Wj-dwr" id="MkB-28-bLt"/>
+            </connections>
             <point key="canvasLocation" x="90" y="150.5"/>
         </collectionViewCell>
     </objects>
