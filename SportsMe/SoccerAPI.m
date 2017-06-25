@@ -48,4 +48,21 @@
     
     completion(games);
 }
+
+- (void)fetchTomorrowsSoccerDataWithCompletion:(void (^)(NSArray *games))completion{
+    NSString *tomorrowsDate = [self getTomorrowsDate];
+    NSError *error;
+    NSString *urlString = [[NSString alloc] initWithFormat:@"https://api.sportradar.us/soccer-t3/am/en/schedules/%@/schedule.json?api_key=%@",tomorrowsDate, secretKey];
+    NSURL *url = [[NSURL alloc] initWithString:urlString];
+    NSData *data = [NSData dataWithContentsOfURL:url];
+    NSDictionary *json =[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+    NSMutableArray *games = [[NSMutableArray alloc] init];
+    for (NSDictionary *dict in json[@"sport_events"]) {
+        Game *game = [[Game alloc]initWithSoccerGame:dict];
+        [games addObject:game];
+    }
+    
+    completion(games);
+}
+
 @end

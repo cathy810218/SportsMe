@@ -9,5 +9,9 @@
 #import <Foundation/Foundation.h>
 
 @interface BaseballAPI : NSObject
+
 - (void)fetchBaseballDataWithCompletion:(void (^)(NSArray *games))completion;
+
+-(void)fetchTomorrowsBaseballDataWithCompletion:(void (^)(NSArray *games))completion;
+
 @end

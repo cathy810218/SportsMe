@@ -51,5 +51,24 @@
     
 }
 
+-(void)fetchTomorrowsBaseballDataWithCompletion:(void (^)(NSArray *games))completion{
+    NSString *tomorrowsDate = [self getTomorrowsDate];
+    NSError *error;
+    NSString *urlString = [[NSString alloc] initWithFormat:@"https://api.sportradar.us/mlb-t5/games/%@/schedule.json?api_key=%@",tomorrowsDate, secretKey];
+    NSURL *url = [[NSURL alloc] initWithString:urlString];
+    NSData *data = [NSData dataWithContentsOfURL:url];
+    NSDictionary *json =[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+    NSArray *games = json[@"league"][@"games"];
+    //    NSLog(@"Games: %@", games);
+    NSMutableArray *gameObjects = [[NSMutableArray alloc]init];
+    for (NSDictionary *dict in games) {
+        Game *game = [[Game alloc]initWithMLBGame:dict];
+        [gameObjects addObject:game];
+    }
+    
+    completion(gameObjects);
+    
+}
+
 
 @end

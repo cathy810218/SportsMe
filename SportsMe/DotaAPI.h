@@ -12,4 +12,6 @@
 
 -(void)fetchDotaDataWithCompletion:(void (^)(NSArray *games))completion;
 
+-(void)fetchTomorrowsDotaDataWithCompletion:(void (^)(NSArray *games))completion;
+
 @end

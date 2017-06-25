@@ -54,4 +54,23 @@
     
 }
 
+-(void)fetchTomorrowsCSGODataWithCompletion:(void (^)(NSArray *games))completion{
+    NSString *tomorrowsDate = [self getTomorrowsDate];
+    NSError *error;
+    NSString *urlString = [[NSString alloc] initWithFormat:@"https://api.sportradar.us/csgo-t1/en/schedules/%@/schedule.json?api_key=%@",tomorrowsDate, secretKey];
+    NSURL *url = [[NSURL alloc] initWithString:urlString];
+    NSData *data = [NSData dataWithContentsOfURL:url];
+    NSDictionary *json =[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+    NSLog(@"%@", json);
+    NSArray *games = json[@"sport_events"];
+    NSLog(@"Games: %@", games);
+    NSMutableArray *gameObjects = [[NSMutableArray alloc]init];
+    for (NSDictionary *dict in games) {
+        Game *game = [[Game alloc]initWithLoLGame:dict];
+        [gameObjects addObject:game];
+    }
+    completion(gameObjects);
+    
+}
+
 @end

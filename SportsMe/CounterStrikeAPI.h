@@ -12,4 +12,6 @@
 
 -(void)fetchCSGODataWithCompletion:(void (^)(NSArray *games))completion;
 
+-(void)fetchTomorrowsCSGODataWithCompletion:(void (^)(NSArray *games))completion;
+
 @end
