@@ -16,7 +16,7 @@
 
 -(NSString *)getTodaysDate{
     self.dateFormatter = [[NSDateFormatter alloc]init];
-    [self.dateFormatter setDateFormat:@"yyyy-MM-dd"];
+    [self.dateFormatter setDateFormat:@"yyyy/MM/dd"];
     return [self.dateFormatter stringFromDate:[NSDate date]];
 }
 
@@ -33,7 +33,6 @@
         Game *game = [[Game alloc] initWithNBAGame:dict];
         [gameObjects addObject:game];
     }
-    gameObjects;
     completion(gameObjects);
 }
 
