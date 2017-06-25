@@ -16,7 +16,9 @@
 @property (strong, nonatomic) NSString *gameDate;
 @property (strong, nonatomic)  NSString * _Nullable channel;
 
--(instancetype)initWithNFLGame:(NSDictionary *)object;
+- (instancetype)initWithNFLGame:(NSDictionary *)object;
 
 - (instancetype)initWithMLBGame:(NSDictionary *)object;
+
+- (instancetype)initWithLoLGame:(NSDictionary *)object;
 @end

@@ -10,6 +10,7 @@
 #import "GameMatchCell.h"
 #import "SportsAPI.h"
 #import "BaseballAPI.h"
+#import "LeagueOfLegendsAPI.h"
 
 @interface MainViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -25,8 +26,13 @@
 
 - (void)viewDidLoad {
     
-    BaseballAPI *baseball = [[BaseballAPI alloc]init];
-    [baseball beginParsing];
+//    BaseballAPI *baseball = [[BaseballAPI alloc]init];
+//    [baseball beginParsing];
+    
+    LeagueOfLegendsAPI *lol = [[LeagueOfLegendsAPI alloc] init];
+    [lol fetchLoLDataWithCompletion:^(NSArray *games) {
+        
+    }];
 
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
