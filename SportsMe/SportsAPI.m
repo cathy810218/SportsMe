@@ -9,11 +9,9 @@
 #import "SportsAPI.h"
 #import "APIKeys.h"
 #import "BaseballAPI.h"
+#import "SoccerAPI.h"
 @interface SportsAPI()<NSXMLParserDelegate>
 
-@property(strong, nonatomic) NSXMLParser *xmlParser;
-@property(strong, nonatomic) NSString *textNode;
-@property(strong, nonatomic) NSString *elementName;
 @end
 @implementation SportsAPI
 
@@ -29,6 +27,10 @@
          }
          case SMSportsTypeMLS:
          {
+             SoccerAPI *soccer = [[SoccerAPI alloc]init];
+             [soccer fetchSoccerDataWithCompletion:^(NSArray *games) {
+                 completion(games);
+             }];
              break;
          }
          case SMSportsTypeESportDOTA:

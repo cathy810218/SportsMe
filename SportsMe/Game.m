@@ -47,12 +47,28 @@
 - (instancetype)initWithSoccerGame:(NSDictionary *)object{
     self = [super init];
     if (self){
-//        self.homeTeam = [[Team alloc] initWithTeamName:object[@""] andCity:<#(NSString *)#>]
         self.homeTeam = [[Team alloc] initWithTeamName:object[@"competitors"][0][@"name"] andCity:object[@"competitors"][0][@"country"]];
         self.awayTeam = [[Team alloc] initWithTeamName:object[@"competitors"][1][@"name"] andCity:object[@"competitors"][1][@"country"]];
         self.gameDate = object[@"scheduled"];
     }
 
+    return self;
+}
+
+- (instancetype)initWithNBAGame:(NSDictionary *)object{
+    self = [super init];
+    if (self) {
+        NSString *awayTeamName = [[object[@"away"][@"name"] componentsSeparatedByString:@" "] firstObject];
+        NSString *awayTeamCity = [[object[@"away"][@"name"] componentsSeparatedByString:@" "] lastObject];
+        NSString *homeTeamName = [[object[@"home"][@"name"] componentsSeparatedByString:@" "] firstObject];
+        self.homeTeam = [[Team alloc]initWithTeamName:homeTeamName andCity:object[@"venue"][@"city"]];
+        self.awayTeam = [[Team alloc] initWithTeamName:awayTeamName andCity:awayTeamCity];
+        
+        self.gameDate = object[@"scheduled"];
+        
+        self.channel = object[@"broadcast"][@"network"];
+    }
+    
     return self;
 }
 
