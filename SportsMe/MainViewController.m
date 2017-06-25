@@ -9,7 +9,6 @@
 #import "MainViewController.h"
 #import "GameMatchCell.h"
 #import "SportsAPI.h"
-#import "BaseballAPI.h"
 
 @interface MainViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -24,9 +23,6 @@
 @implementation MainViewController
 
 - (void)viewDidLoad {
-    
-    BaseballAPI *baseball = [[BaseballAPI alloc]init];
-    [baseball beginParsing];
 
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
@@ -39,6 +35,9 @@
     self.tableView.estimatedRowHeight = 300;
     
     [self fetchTodaysGames];
+    
+    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"nav_bg.png"] forBarMetrics:UIBarMetricsDefault];
+
 }
 
 - (void)fetchTodaysGames {

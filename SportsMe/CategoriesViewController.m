@@ -8,6 +8,7 @@
 
 #import "CategoriesViewController.h"
 #import "CategoryCell.h"
+#import "BaseballAPI.h"
 
 @interface CategoriesViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
@@ -39,7 +40,30 @@
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    // Do a network call base on what user selects
+    switch (indexPath.row) {
+        case 0:
+        {
+            
+            break;
+        }
+        case 1:
+        {
+            break;
+        }
+        case 2:
+        {
+            break;
+        }
+        case 3:
+        {
+            break;
+        }
+        case 4:
+        {
+            break;
+        }
+    }
+
 }
 
 
