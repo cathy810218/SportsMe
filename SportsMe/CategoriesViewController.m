@@ -8,9 +8,11 @@
 
 #import "CategoriesViewController.h"
 #import "CategoryCell.h"
+#import "BaseballAPI.h"
 
 @interface CategoriesViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (strong, nonatomic) NSArray *buttonImages;
 
 @end
 
@@ -23,6 +25,8 @@
     
     UINib *nib = [UINib nibWithNibName:@"CategoryCell" bundle:[NSBundle mainBundle]];
     [self.collectionView registerNib:nib forCellWithReuseIdentifier:@"CategoryCell"];
+    
+    self.buttonImages = @[@"mlb", @"mls", @"esports", @"nba", @"nfl"];
 }
 
 
@@ -34,12 +38,36 @@
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     CategoryCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CategoryCell" forIndexPath:indexPath];
-    
+    UIImage *img = [UIImage imageNamed:self.buttonImages[indexPath.row]];
+    cell.imageView.image = img;
     return cell;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    // Do a network call base on what user selects
+    switch (indexPath.row) {
+        case 0:
+        {
+            
+            break;
+        }
+        case 1:
+        {
+            break;
+        }
+        case 2:
+        {
+            break;
+        }
+        case 3:
+        {
+            break;
+        }
+        case 4:
+        {
+            break;
+        }
+    }
+
 }
 
 

@@ -21,7 +21,7 @@
     return [self.dateFormatter stringFromDate:[NSDate date]];
 }
 
--(void)beginParsing{
+-(void)fetchBaseballDataWithCompletion:(void (^)(NSArray *games))completion{
     NSString *todaysDate = [self getTodaysDate];
     NSError *error;
     NSString *urlString = [[NSString alloc] initWithFormat:@"https://api.sportradar.us/mlb-t5/games/%@/schedule.json?api_key=%@",todaysDate, secretKey];
@@ -35,7 +35,8 @@
         Game *game = [[Game alloc]initWithMLBGame:dict];
         [gameObjects addObject:game];
     }
-    
+
+    completion(gameObjects);
     
 }
 

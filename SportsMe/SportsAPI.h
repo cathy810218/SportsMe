@@ -9,7 +9,9 @@
 #import <Foundation/Foundation.h>
 
 typedef NS_ENUM(NSUInteger, SMSportsType) {
-    SMSportsTypeESport,
+    SMSportsTypeESportLOL,
+    SMSportsTypeESportDOTA,
+    SMSportsTypeESportCSGL,
     SMSportsTypeNFL,
     SMSportsTypeMLB,
     SMSportsTypeNBA,
@@ -17,7 +19,6 @@ typedef NS_ENUM(NSUInteger, SMSportsType) {
 };
 
 @interface SportsAPI : NSObject 
-
--(void)beginParsing;
+-(void)fetchGameMatchDataWithSportType:(SMSportsType)type completion:(void (^)(NSArray *games))completion;
 
 @end
