@@ -22,7 +22,7 @@
     return [self.dateFormatter stringFromDate:[NSDate date]];
 }
 
--(void)beginParsing{
+- (void)fetchSoccerDataWithCompletion:(void (^)(NSArray *games))completion{
     NSString *todaysDate = [self getTodaysDate];
     NSError *error;
     NSString *urlString = [[NSString alloc] initWithFormat:@"https://api.sportradar.us/soccer-t3/am/en/schedules/%@/schedule.json?api_key=%@",todaysDate, secretKey];
@@ -35,5 +35,6 @@
         [games addObject:game];
     }
     
+    completion(games);
 }
 @end

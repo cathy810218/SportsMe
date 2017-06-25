@@ -9,7 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface SoccerAPI : NSObject
--(void)beginParsing;
+- (void)fetchSoccerDataWithCompletion:(void (^)(NSArray *games))completion;
+
 
 
 @end
