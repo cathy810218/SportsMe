@@ -8,6 +8,7 @@ target 'SportsMe' do
   # Pods for SportsMe
   pod 'SDWebImage', '~>3.8'
   pod 'AFNetworking', '~> 3.0'
+  pod 'Masonry'
 
   target 'SportsMeTests' do
     inherit! :search_paths

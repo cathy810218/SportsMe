@@ -20,7 +20,9 @@ typedef NS_ENUM(NSUInteger, SMSportsType) {
 };
 
 @interface SportsAPI : NSObject 
--(void)fetchGameMatchDataWithSportType:(SMSportsType)type completion:(void (^)(NSArray *games))completion;
++ (void)fetchGameMatchDataWithSportType:(SMSportsType)type completion:(void (^)(NSArray *games))completion;
+
+-(void)fetchTommorrowsGameMatchDataWithSportType:(SMSportsType)type completion:(void (^)(NSArray *games))completion;
 
 -(void)fetchTommorrowsGameMatchDataWithSportType:(SMSportsType)type completion:(void (^)(NSArray *games))completion;
 

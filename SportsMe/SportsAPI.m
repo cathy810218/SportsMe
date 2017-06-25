@@ -86,6 +86,44 @@
  }
 
 
++ (void)fetchAllTeamsWithSportsType:(SMSportsType)type completion:(void (^)(NSArray *games))completion {
+    switch (type) {
+        case SMSportsTypeMLB:
+        {
+            BaseballAPI *baseball = [[BaseballAPI alloc] init];
+            [baseball fetchBaseballDataWithCompletion:^(NSArray *games) {
+                completion(games);
+            }];
+            break;
+        }
+        case SMSportsTypeMLS:
+        {
+            break;
+        }
+        case SMSportsTypeESportDOTA:
+        {
+            
+        }
+        case SMSportsTypeESportLOL:
+        {
+            
+        }
+        case SMSportsTypeESportCSGL:
+        {
+            
+        }
+        case SMSportsTypeNBA:
+        {
+            
+        }
+        case SMSportsTypeNFL:
+        {
+            
+        }
+    }
+}
+
+
 -(void)fetchTommorrowsGameMatchDataWithSportType:(SMSportsType)type completion:(void (^)(NSArray *games))completion{
     switch (type) {
         case SMSportsTypeMLB:
