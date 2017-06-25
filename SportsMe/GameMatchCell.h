@@ -10,4 +10,11 @@
 
 @interface GameMatchCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UIImageView *homeTeamImageView;
+
+@property (weak, nonatomic) IBOutlet UIImageView *awayTeamImageView;
+@property (weak, nonatomic) IBOutlet UILabel *homeTeamNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *awayTeamNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *scheduledTimeLabel;
+
 @end

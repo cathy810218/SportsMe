@@ -21,11 +21,19 @@
 		3D69F7B11EFF064500D16898 /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D69F7AF1EFF064500D16898 /* CategoryCell.xib */; };
 		3D9819361EFF258500C9F6DF /* Team.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D9819351EFF258500C9F6DF /* Team.m */; };
 		3D98193C1EFF25B600C9F6DF /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D98193B1EFF25B600C9F6DF /* Game.m */; };
+		3D98194A1EFF91A500C9F6DF /* TeamsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D9819491EFF91A500C9F6DF /* TeamsViewController.m */; };
+		3D98194E1EFF92C400C9F6DF /* TeamCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D98194C1EFF92C400C9F6DF /* TeamCell.m */; };
+		3D98194F1EFF92C400C9F6DF /* TeamCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D98194D1EFF92C400C9F6DF /* TeamCell.xib */; };
 		3DBA9F941EFEEE53003A7721 /* CategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DBA9F931EFEEE53003A7721 /* CategoriesViewController.m */; };
+		3DDA5D421EFFC2DA003D9FBA /* NSString+DateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DDA5D411EFFC2DA003D9FBA /* NSString+DateFormatter.m */; };
+		3DDA5D491F003998003D9FBA /* MLBTeams.json in Resources */ = {isa = PBXBuildFile; fileRef = 3DDA5D471F003998003D9FBA /* MLBTeams.json */; };
+		3DDA5D4A1F003998003D9FBA /* NBATeams.json in Resources */ = {isa = PBXBuildFile; fileRef = 3DDA5D481F003998003D9FBA /* NBATeams.json */; };
+		3DDA5D4C1F003A99003D9FBA /* NFLTeams.json in Resources */ = {isa = PBXBuildFile; fileRef = 3DDA5D4B1F003A99003D9FBA /* NFLTeams.json */; };
 		71E5C0321EFF0E890011A455 /* SportsAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 71E5C0311EFF0E890011A455 /* SportsAPI.m */; };
 		71E5C0381EFF4A1E0011A455 /* LeagueOfLegendsAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 71E5C0371EFF4A1E0011A455 /* LeagueOfLegendsAPI.m */; };
 		71E5C03B1EFF56AA0011A455 /* DotaAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 71E5C03A1EFF56AA0011A455 /* DotaAPI.m */; };
 		71E5C03E1EFF580C0011A455 /* CounterStrikeAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 71E5C03D1EFF580C0011A455 /* CounterStrikeAPI.m */; };
+		71E5C0401F006E920011A455 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71E5C03F1F006E920011A455 /* EventKit.framework */; };
 		7BFB7AA29AEB654BF0D5F4AC /* libPods-SportsMeTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C104C4FAF7E6A313D8118C97 /* libPods-SportsMeTests.a */; };
 		CD1DC30E1EFF2F3E00E89E51 /* BaseballAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = CD1DC30D1EFF2F3E00E89E51 /* BaseballAPI.m */; };
 		CD1DC3111EFF469B00E89E51 /* SoccerAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = CD1DC3101EFF469B00E89E51 /* SoccerAPI.m */; };
@@ -70,8 +78,18 @@
 		3D9819351EFF258500C9F6DF /* Team.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Team.m; sourceTree = "<group>"; };
 		3D98193A1EFF25B600C9F6DF /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
 		3D98193B1EFF25B600C9F6DF /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
+		3D9819481EFF91A500C9F6DF /* TeamsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeamsViewController.h; sourceTree = "<group>"; };
+		3D9819491EFF91A500C9F6DF /* TeamsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeamsViewController.m; sourceTree = "<group>"; };
+		3D98194B1EFF92C400C9F6DF /* TeamCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeamCell.h; sourceTree = "<group>"; };
+		3D98194C1EFF92C400C9F6DF /* TeamCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeamCell.m; sourceTree = "<group>"; };
+		3D98194D1EFF92C400C9F6DF /* TeamCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TeamCell.xib; sourceTree = "<group>"; };
 		3DBA9F921EFEEE53003A7721 /* CategoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoriesViewController.h; sourceTree = "<group>"; };
 		3DBA9F931EFEEE53003A7721 /* CategoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoriesViewController.m; sourceTree = "<group>"; };
+		3DDA5D401EFFC2DA003D9FBA /* NSString+DateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+DateFormatter.h"; sourceTree = "<group>"; };
+		3DDA5D411EFFC2DA003D9FBA /* NSString+DateFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+DateFormatter.m"; sourceTree = "<group>"; };
+		3DDA5D471F003998003D9FBA /* MLBTeams.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MLBTeams.json; sourceTree = "<group>"; };
+		3DDA5D481F003998003D9FBA /* NBATeams.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = NBATeams.json; sourceTree = "<group>"; };
+		3DDA5D4B1F003A99003D9FBA /* NFLTeams.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = NFLTeams.json; sourceTree = "<group>"; };
 		71E5C0301EFF0E890011A455 /* SportsAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SportsAPI.h; sourceTree = "<group>"; };
 		71E5C0311EFF0E890011A455 /* SportsAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SportsAPI.m; sourceTree = "<group>"; };
 		71E5C0361EFF4A1E0011A455 /* LeagueOfLegendsAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeagueOfLegendsAPI.h; sourceTree = "<group>"; };
@@ -80,6 +98,7 @@
 		71E5C03A1EFF56AA0011A455 /* DotaAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DotaAPI.m; sourceTree = "<group>"; };
 		71E5C03C1EFF580C0011A455 /* CounterStrikeAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CounterStrikeAPI.h; sourceTree = "<group>"; };
 		71E5C03D1EFF580C0011A455 /* CounterStrikeAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CounterStrikeAPI.m; sourceTree = "<group>"; };
+		71E5C03F1F006E920011A455 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		89909EC881712634EC2B9E6F /* libPods-SportsMe.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SportsMe.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C104C4FAF7E6A313D8118C97 /* libPods-SportsMeTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SportsMeTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5B92F6DB2C9F58CE0396C6E /* Pods-SportsMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportsMe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SportsMe/Pods-SportsMe.debug.xcconfig"; sourceTree = "<group>"; };
@@ -101,6 +120,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71E5C0401F006E920011A455 /* EventKit.framework in Frameworks */,
 				0B46C0C20B9E9510AB087688 /* libPods-SportsMe.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -150,6 +170,7 @@
 		3D5B612C1EFEE2B0001DB05A /* SportsMe */ = {
 			isa = PBXGroup;
 			children = (
+				3DDA5D3F1EFFC2AD003D9FBA /* Category */,
 				3D5B61541EFEE440001DB05A /* Controller */,
 				3D5B61531EFEE43C001DB05A /* View */,
 				3D5B61521EFEE42E001DB05A /* Model */,
@@ -162,6 +183,9 @@
 		3D5B612D1EFEE2B0001DB05A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3DDA5D471F003998003D9FBA /* MLBTeams.json */,
+				3DDA5D481F003998003D9FBA /* NBATeams.json */,
+				3DDA5D4B1F003A99003D9FBA /* NFLTeams.json */,
 				3D5B613B1EFEE2B0001DB05A /* LaunchScreen.storyboard */,
 				CD970AA91EFF220A00BE5299 /* APIKeys.h */,
 				CD970AAA1EFF220A00BE5299 /* APIKeys.m */,
@@ -204,6 +228,9 @@
 				3D69F7AD1EFF064500D16898 /* CategoryCell.h */,
 				3D69F7AE1EFF064500D16898 /* CategoryCell.m */,
 				3D69F7AF1EFF064500D16898 /* CategoryCell.xib */,
+				3D98194B1EFF92C400C9F6DF /* TeamCell.h */,
+				3D98194C1EFF92C400C9F6DF /* TeamCell.m */,
+				3D98194D1EFF92C400C9F6DF /* TeamCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -215,8 +242,19 @@
 				3D5B61341EFEE2B0001DB05A /* MainViewController.m */,
 				3DBA9F921EFEEE53003A7721 /* CategoriesViewController.h */,
 				3DBA9F931EFEEE53003A7721 /* CategoriesViewController.m */,
+				3D9819481EFF91A500C9F6DF /* TeamsViewController.h */,
+				3D9819491EFF91A500C9F6DF /* TeamsViewController.m */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		3DDA5D3F1EFFC2AD003D9FBA /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				3DDA5D401EFFC2DA003D9FBA /* NSString+DateFormatter.h */,
+				3DDA5D411EFFC2DA003D9FBA /* NSString+DateFormatter.m */,
+			);
+			name = Category;
 			sourceTree = "<group>";
 		};
 		71E5C0331EFF0E8F0011A455 /* APIs */ = {
@@ -245,6 +283,7 @@
 		CC1DD287265B08B75E42C820 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				71E5C03F1F006E920011A455 /* EventKit.framework */,
 				89909EC881712634EC2B9E6F /* libPods-SportsMe.a */,
 				C104C4FAF7E6A313D8118C97 /* libPods-SportsMeTests.a */,
 			);
@@ -341,10 +380,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DDA5D4A1F003998003D9FBA /* NBATeams.json in Resources */,
 				3D69F7B11EFF064500D16898 /* CategoryCell.xib in Resources */,
 				3D5B613D1EFEE2B0001DB05A /* LaunchScreen.storyboard in Resources */,
 				3D5B61561EFEE73C001DB05A /* GameMatchCell.xib in Resources */,
+				3DDA5D491F003998003D9FBA /* MLBTeams.json in Resources */,
+				3DDA5D4C1F003A99003D9FBA /* NFLTeams.json in Resources */,
 				3D5B613A1EFEE2B0001DB05A /* Assets.xcassets in Resources */,
+				3D98194F1EFF92C400C9F6DF /* TeamCell.xib in Resources */,
 				3D5B61381EFEE2B0001DB05A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -460,6 +503,8 @@
 				71E5C03E1EFF580C0011A455 /* CounterStrikeAPI.m in Sources */,
 				3D5B61351EFEE2B0001DB05A /* MainViewController.m in Sources */,
 				3D69F7B01EFF064500D16898 /* CategoryCell.m in Sources */,
+				3DDA5D421EFFC2DA003D9FBA /* NSString+DateFormatter.m in Sources */,
+				3D98194E1EFF92C400C9F6DF /* TeamCell.m in Sources */,
 				71E5C0381EFF4A1E0011A455 /* LeagueOfLegendsAPI.m in Sources */,
 				CD1DC3111EFF469B00E89E51 /* SoccerAPI.m in Sources */,
 				71E5C0321EFF0E890011A455 /* SportsAPI.m in Sources */,
@@ -471,6 +516,7 @@
 				CD1DC3171EFF639100E89E51 /* HockeyAPI.m in Sources */,
 				3DBA9F941EFEEE53003A7721 /* CategoriesViewController.m in Sources */,
 				3D9819361EFF258500C9F6DF /* Team.m in Sources */,
+				3D98194A1EFF91A500C9F6DF /* TeamsViewController.m in Sources */,
 				71E5C03B1EFF56AA0011A455 /* DotaAPI.m in Sources */,
 				3D5B612F1EFEE2B0001DB05A /* main.m in Sources */,
 			);

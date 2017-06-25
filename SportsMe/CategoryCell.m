@@ -8,11 +8,26 @@
 
 #import "CategoryCell.h"
 
+@interface CategoryCell()
+@property (strong, nonatomic) UIView *dimView;
+@end
 @implementation CategoryCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
+    self.imageView.layer.cornerRadius = 5.0;
+    self.imageView.layer.masksToBounds = YES;
+    
 }
+
+-(void)setHighlighted:(BOOL)highlighted {
+    [super setHighlighted:highlighted];
+    if (highlighted) {
+        self.transform = CGAffineTransformMakeScale(0.96, 0.96);
+    } else {
+        self.transform = CGAffineTransformIdentity;
+    }
+}
+
 
 @end
