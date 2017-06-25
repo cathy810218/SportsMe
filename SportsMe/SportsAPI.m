@@ -140,8 +140,7 @@
 + (void)fetchTommorrowsGameMatchDataWithSportsType:(SMSportsType)type completion:(void (^)(NSArray *games))completion {    switch (type) {
     case SMSportsTypeMLB:
     {
-        BaseballAPI *baseball = [[BaseballAPI alloc] init];
-        [baseball fetchTomorrowsBaseballDataWithCompletion:^(NSArray *games) {
+        [[BaseballAPI shared] fetchTomorrowsBaseballDataWithCompletion:^(NSArray *games) {
             completion(games);
         }];
         break;

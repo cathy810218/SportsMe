@@ -15,7 +15,6 @@
 @property (strong, nonatomic) NSArray *buttonImages;
 @property (strong, nonatomic) NSArray *types;
 @property (weak, nonatomic) IBOutlet UIView *esportsView;
-
 @end
 
 @implementation CategoriesViewController
@@ -33,6 +32,12 @@
     
     self.buttonImages = @[@"mlb", @"mls", @"esports", @"nba", @"nfl"];
     self.types = @[@0, @1, @2, @5, @6];
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapToHideEsportsView)];
+}
+
+- (void)tapToHideEsportsView {
+    
 }
 
 - (void)setupEsportsView {

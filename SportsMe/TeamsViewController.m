@@ -34,18 +34,18 @@
     NSData *data = [[NSUserDefaults standardUserDefaults] objectForKey:@"kGames"];
     NSDictionary *dict = [NSKeyedUnarchiver unarchiveObjectWithData:data];
     
-    if (dict == nil) {
+//    if (dict == nil) {
         [SportsAPI fetchAllTeamsWithSportsType:self.sportsType completion:^(NSArray *teams) {
             self.teams = teams;
-            NSDictionary *sportsToGames = @{sportsName:teams};
+            NSDictionary *sportsToGames = @{@(self.sportsType):teams};
             
             NSData *dataSave = [NSKeyedArchiver archivedDataWithRootObject:sportsToGames];
             [[NSUserDefaults standardUserDefaults] setObject:dataSave forKey:@"kGames"];
             [[NSUserDefaults standardUserDefaults] synchronize];            
         }];
-    } else {
-        self.teams = dict[sportsName];
-    }
+//    } else {
+//        self.teams = dict[sportsName];
+//    }
 }
 
 - (IBAction)selectAllAction:(UIBarButtonItem *)sender {

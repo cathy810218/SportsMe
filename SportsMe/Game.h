@@ -13,7 +13,7 @@
 
 @property (strong, nonatomic) Team *homeTeam;
 @property (strong, nonatomic) Team *awayTeam;
-@property (strong, nonatomic) NSString *gameDate;
+@property (strong, nonatomic) NSDate *gameDate;
 @property (strong, nonatomic) NSString * channel;
 
 - (instancetype)initWithNFLGame:(NSDictionary *)object;

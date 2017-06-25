@@ -82,6 +82,11 @@
     NSMutableArray *gameObjects = [[NSMutableArray alloc]init];
     for (NSDictionary *dict in games) {
         Game *game = [[Game alloc]initWithMLBGame:dict];
+        NSString *homeKey = dict[@"home"][@"name"];
+        NSString *awayKey = dict[@"away"][@"name"];
+        game.homeTeam = self.teamDictionary[homeKey];
+        game.awayTeam = self.teamDictionary[awayKey];
+        
         [gameObjects addObject:game];
     }
     completion(gameObjects);
@@ -93,9 +98,6 @@
     NSData *data = [NSData dataWithContentsOfURL:localFileURL];
     
     NSError *error;
-//    NSString *urlString = [[NSString alloc] initWithFormat:@"https://api.sportradar.us/mlb-t6/league/hierarchy.json?api_key=%@", secretKey];
-//    NSURL *url = [[NSURL alloc] initWithString:urlString];
-//    NSData *data = [NSData dataWithContentsOfURL:url];
     NSDictionary *json =[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
     
     NSMutableArray *alTeamArray = [[NSMutableArray alloc]init];

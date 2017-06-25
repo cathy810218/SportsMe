@@ -48,11 +48,13 @@
 
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    [self getTodaysGames];
     [self checkIfDisplayGamesDataExist];
+    [self.tableView reloadData];
 }
 
 - (void)checkIfDisplayGamesDataExist {
-    if (self.displayGames == nil) {
+    if (self.displayGames.count == 0) {
         self.placeholderImageView.hidden = NO;
     } else {
         self.placeholderImageView.hidden = YES;
@@ -61,47 +63,44 @@
 
 
 - (void)getTodaysGames {
-//    NSDictionary *dict = [[NSUserDefaults standardUserDefaults] objectForKey:@"kGames"];
-//    NSLog(@"current selected sports: %@", [dict allKeys]);
+    NSData *data = [[NSUserDefaults standardUserDefaults] objectForKey:@"kGames"];
+    NSDictionary *dict = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+    NSMutableArray *array = [NSMutableArray new];
 
-//    [SportsAPI fetchGameMatchDataWithSportsType:SMSportsTypeMLB completion:^(NSArray *games) {
-//        self.displayGames = games;
-//    }];
-//    for (SMSportsType *key in [dict allKeys]) {
-//        switch ([key integerValue]) {
-//                // Append it's value to self.displayGames
-//            case SMSportsTypeESportLOL:
-//
-//                break;
-//            case SMSportsTypeESportDOTA:
-//                break;
-//            case SMSportsTypeESportCSGL:
-//                break;
-//            case SMSportsTypeNFL:
-//                break;
-//            case SMSportsTypeMLB:
-//                break;
-//            case SMSportsTypeNBA:
-//                break;
-//            case SMSportsTypeMLS:
-//                break;
-//            case SMSportsTypeNHL:
-//                break;
-//            default:
-//                break;
-//        }
-//    }
+    for (NSString *key in [dict allKeys]) {
+        [SportsAPI fetchGameMatchDataWithSportsType:[key intValue] completion:^(NSArray *games) {
+            [array addObjectsFromArray:games];
+            self.displayGames = games;
+        }];
+    }
+    NSSortDescriptor *dateDescriptor = [NSSortDescriptor
+                                        sortDescriptorWithKey:@"gameDate"
+                                        ascending:YES];
+    NSArray *sortDescriptors = [NSArray arrayWithObject:dateDescriptor];
+    self.displayGames = [array sortedArrayUsingDescriptors:sortDescriptors];
 }
+
+
 
 - (void)getTomorrowsGames {
+    NSData *data = [[NSUserDefaults standardUserDefaults] objectForKey:@"kGames"];
+    NSDictionary *dict = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+    NSMutableArray *array = [NSMutableArray new];
     
+    for (NSString *key in [dict allKeys]) {
+        [SportsAPI fetchTommorrowsGameMatchDataWithSportsType:[key intValue] completion:^(NSArray *games) {
+            [array addObjectsFromArray:games];
+            self.displayGames = games;
+        }];
+    }
+    self.displayGames = array;
 }
+
 
 
 - (void)categoryButtonPressed:(UIBarButtonItem *)sender {
     [self performSegueWithIdentifier:@"CategoriesViewController" sender:sender];
 }
-
 
 - (IBAction)segmentControlAction:(UISegmentedControl *)sender {
     switch (sender.selectedSegmentIndex) {
@@ -112,7 +111,7 @@
             break;
         case 1:
             NSLog(@"1");
-            self.displayGames = self.tomorrowGames;
+            [self getTomorrowsGames];
             [self.tableView reloadData];
             break;
         case 2:
@@ -137,8 +136,16 @@
     cell.awayTeamImageView.image = game.awayTeam.logo;
     cell.homeTeamNameLabel.text = game.homeTeam.name;
     cell.awayTeamNameLabel.text = game.awayTeam.name;
-    cell.scheduledTimeLabel.text = game.gameDate;
+    cell.scheduledTimeLabel.text = [self convertDateToString:game.gameDate];
     return cell;
+}
+
+- (NSString *)convertDateToString:(NSDate *)date {
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"HH:mm a"];
+    NSString *str = [dateFormat stringFromDate:date];
+    [dateFormat setTimeZone:[NSTimeZone systemTimeZone]];
+    return str;
 }
 
 @end
