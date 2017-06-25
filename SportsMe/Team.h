@@ -10,4 +10,10 @@
 
 @interface Team : NSObject
 
+@property (strong, nonatomic) NSString *name;
+@property (strong, nonatomic) NSString *location;
+@property (strong, nonatomic) NSString *teamId;
+
+
+- (instancetype)initWithObject:(NSDictionary *)jsonObject;
 @end

@@ -10,4 +10,13 @@
 
 @implementation Team
 
+- (instancetype)initWithObject:(NSDictionary *)jsonObject {
+    self = [super init];
+    if (self) {
+        self.name = jsonObject[@"name"];
+        self.location = jsonObject[@"location"];
+    }
+    return self;
+}
+
 @end

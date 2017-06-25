@@ -10,4 +10,14 @@
 
 @implementation Game
 
+- (instancetype)initWithNFLGame:(NSDictionary *)object {
+    self = [super init];
+    if (self) {
+//        object[] = self.homeTeam;
+//        object[] = self.awayTeam;
+        
+    }
+    return self;
+}
+
 @end

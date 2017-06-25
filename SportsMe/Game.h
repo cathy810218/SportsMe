@@ -7,8 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Team.h"
 
 @interface Game : NSObject
+
+@property (strong, nonatomic) Team *homeTeam;
+@property (strong, nonatomic) Team *awayTeam;
+@property (strong, nonatomic) NSString *gameDate;
+@property (strong, nonatomic)  NSString * _Nullable channel;
+
+-(instancetype)initWithNFLGame:(NSDictionary *)object;
 
 
 @end
