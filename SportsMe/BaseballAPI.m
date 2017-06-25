@@ -8,6 +8,7 @@
 
 #import "BaseballAPI.h"
 #import "APIKeys.h"
+#import "Game.h"
 @interface BaseballAPI()
 @property(strong, nonatomic) NSString *textNode;
 @property(strong, nonatomic) NSString *elementName;
@@ -28,8 +29,15 @@
     NSString *urlString = [[NSString alloc] initWithFormat:@"https://api.sportradar.us/mlb-t5/games/%@/schedule.json?api_key=%@",todaysDate, secretKey];
     NSURL *url = [[NSURL alloc] initWithString:urlString];
     NSData *data = [NSData dataWithContentsOfURL:url];
-    NSMutableArray *json =[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
-    
+    NSDictionary *json =[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+    NSArray *games = json[@"league"][@"games"];
+    NSLog(@"Games: %@", games);
+    NSMutableArray *gameObjects = [[NSMutableArray alloc]init];
+    for (NSDictionary *dict in games) {
+        Game *game = [[Game alloc]initWithMLBGame:dict];
+        [gameObjects addObject:game];
+    }
+    NSLog(@"%@", gameObjects);
     
 }
 

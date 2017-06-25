@@ -8,6 +8,7 @@
 
 #import "Game.h"
 
+
 @implementation Game
 
 - (instancetype)initWithNFLGame:(NSDictionary *)object {
@@ -15,6 +16,18 @@
     if (self) {
 //        object[] = self.homeTeam;
 //        object[] = self.awayTeam;
+        
+    }
+    return self;
+}
+
+- (instancetype)initWithMLBGame:(NSDictionary *)object{
+    self = [super init];
+    if (self){
+        self.homeTeam = [[Team alloc] initWithTeamName:object[@"home"][@"name"] andCity:object[@"home"][@"market"]];
+        self.awayTeam = [[Team alloc] initWithTeamName:object[@"away"][@"name"] andCity:object[@"away"][@"market"]];
+        self.gameDate = object[@"scheduled"];
+        self.channel = object[@"broadcast"][@"network"];
         
     }
     return self;
