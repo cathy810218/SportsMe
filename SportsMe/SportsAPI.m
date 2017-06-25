@@ -12,6 +12,9 @@
 #import "SoccerAPI.h"
 #import "BasketballAPI.h"
 #import "HockeyAPI.h"
+#import "DotaAPI.h"
+#import "LeagueOfLegendsAPI.h"
+#import "CounterStrikeAPI.h"
 @interface SportsAPI()<NSXMLParserDelegate>
 
 @end
@@ -37,15 +40,26 @@
          }
          case SMSportsTypeESportDOTA:
          {
-             
+             DotaAPI *dota = [[DotaAPI alloc] init];
+             [dota fetchDotaDataWithCompletion:^(NSArray *games) {
+                 completion(games);
+             }];
+             break;
          }
          case SMSportsTypeESportLOL:
          {
-             
+             LeagueOfLegendsAPI *lol = [[LeagueOfLegendsAPI alloc] init];
+             [lol fetchLoLDataWithCompletion:^(NSArray *games) {
+                 completion(games);
+             }];
+             break;
          }
          case SMSportsTypeESportCSGL:
          {
-             
+             CounterStrikeAPI *csgo = [[CounterStrikeAPI alloc] init];
+             [csgo fetchCSGODataWithCompletion:^(NSArray *games) {
+                 completion(games);
+             }];
          }
          case SMSportsTypeNBA:
          {
@@ -70,6 +84,72 @@
              
      }
  }
+
+
+-(void)fetchTommorrowsGameMatchDataWithSportType:(SMSportsType)type completion:(void (^)(NSArray *games))completion{
+    switch (type) {
+        case SMSportsTypeMLB:
+        {
+            BaseballAPI *baseball = [[BaseballAPI alloc] init];
+            [baseball fetchTomorrowsBaseballDataWithCompletion:^(NSArray *games) {
+                completion(games);
+            }];
+            break;
+        }
+        case SMSportsTypeMLS:
+        {
+            SoccerAPI *soccer = [[SoccerAPI alloc] init];
+            [soccer fetchTomorrowsSoccerDataWithCompletion:^(NSArray *games) {
+                completion(games);
+            }];
+            break;
+        }
+        case SMSportsTypeNFL:
+        {
+            break;
+        }
+        case SMSportsTypeNHL:
+        {
+            HockeyAPI *hockey = [[HockeyAPI alloc] init];
+            [hockey fetchTommorrowsHockeyDataWithCompletion:^(NSArray *games) {
+                completion(games);
+            }];
+            break;
+        }
+        case SMSportsTypeNBA:
+        {
+            BasketballAPI *basketball = [[BasketballAPI alloc] init];
+            [basketball fetchTomorrowsBasketballDataWithCompletion:^(NSArray *games) {
+                completion(games);
+            }];
+            break;
+        }
+        case SMSportsTypeESportDOTA:
+        {
+            DotaAPI *dota = [[DotaAPI alloc] init];
+            [dota fetchTomorrowsDotaDataWithCompletion:^(NSArray *games) {
+                completion(games);
+            }];
+            break;
+        }
+        case SMSportsTypeESportLOL:
+        {
+            LeagueOfLegendsAPI *lol = [[LeagueOfLegendsAPI alloc] init];
+            [lol fetchTomorrowsLoLDataWithCompletion:^(NSArray *games) {
+                completion(games);
+            }];
+            break;
+        }
+        case SMSportsTypeESportCSGL:
+        {
+            CounterStrikeAPI *csgo = [[CounterStrikeAPI alloc] init];
+            [csgo fetchTomorrowsCSGODataWithCompletion:^(NSArray *games) {
+                completion(games);
+            }];
+            break;
+        }
+    }
+}
 
 
 
