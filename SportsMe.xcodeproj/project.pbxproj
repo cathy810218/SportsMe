@@ -33,6 +33,7 @@
 		71E5C0381EFF4A1E0011A455 /* LeagueOfLegendsAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 71E5C0371EFF4A1E0011A455 /* LeagueOfLegendsAPI.m */; };
 		71E5C03B1EFF56AA0011A455 /* DotaAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 71E5C03A1EFF56AA0011A455 /* DotaAPI.m */; };
 		71E5C03E1EFF580C0011A455 /* CounterStrikeAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 71E5C03D1EFF580C0011A455 /* CounterStrikeAPI.m */; };
+		71E5C0401F006E920011A455 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71E5C03F1F006E920011A455 /* EventKit.framework */; };
 		7BFB7AA29AEB654BF0D5F4AC /* libPods-SportsMeTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C104C4FAF7E6A313D8118C97 /* libPods-SportsMeTests.a */; };
 		CD1DC30E1EFF2F3E00E89E51 /* BaseballAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = CD1DC30D1EFF2F3E00E89E51 /* BaseballAPI.m */; };
 		CD1DC3111EFF469B00E89E51 /* SoccerAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = CD1DC3101EFF469B00E89E51 /* SoccerAPI.m */; };
@@ -97,6 +98,7 @@
 		71E5C03A1EFF56AA0011A455 /* DotaAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DotaAPI.m; sourceTree = "<group>"; };
 		71E5C03C1EFF580C0011A455 /* CounterStrikeAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CounterStrikeAPI.h; sourceTree = "<group>"; };
 		71E5C03D1EFF580C0011A455 /* CounterStrikeAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CounterStrikeAPI.m; sourceTree = "<group>"; };
+		71E5C03F1F006E920011A455 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		89909EC881712634EC2B9E6F /* libPods-SportsMe.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SportsMe.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C104C4FAF7E6A313D8118C97 /* libPods-SportsMeTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SportsMeTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5B92F6DB2C9F58CE0396C6E /* Pods-SportsMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportsMe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SportsMe/Pods-SportsMe.debug.xcconfig"; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71E5C0401F006E920011A455 /* EventKit.framework in Frameworks */,
 				0B46C0C20B9E9510AB087688 /* libPods-SportsMe.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -280,6 +283,7 @@
 		CC1DD287265B08B75E42C820 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				71E5C03F1F006E920011A455 /* EventKit.framework */,
 				89909EC881712634EC2B9E6F /* libPods-SportsMe.a */,
 				C104C4FAF7E6A313D8118C97 /* libPods-SportsMeTests.a */,
 			);

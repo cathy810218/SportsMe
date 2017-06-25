@@ -12,6 +12,8 @@
 #import "Game.h"
 #import "Team.h"
 
+#import <EventKit/EventKit.h>
+
 @interface MainViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
@@ -164,7 +166,18 @@
                                                                              title:@"Add to Calendar"
                                                                            handler:^(UITableViewRowAction *action, NSIndexPath *indexPath)
                                            {
-                                               
+                                               Game *game = self.displayGames[indexPath.row];
+                                               EKEventStore *store = [EKEventStore new];
+                                               [store requestAccessToEntityType:EKEntityTypeEvent completion:^(BOOL granted, NSError *error) {
+                                                   if (!granted) { return; }
+                                                   EKEvent *event = [EKEvent eventWithEventStore:store];
+                                                   event.title = [NSString stringWithFormat:@"%@ vs. %@", game.homeTeam.name, game.awayTeam.name];
+                                                   event.startDate = game.gameDate;
+                                                   event.endDate = [game.gameDate dateByAddingTimeInterval:60*60*2];
+                                                   event.calendar = [store defaultCalendarForNewEvents];
+                                                   NSError *err = nil;
+                                                   [store saveEvent:event span:EKSpanThisEvent commit:YES error:&err];
+                                               }];
                                            }];
     addToCalendar.backgroundColor = [UIColor colorWithRed:0.102 green:0.247 blue:0.392 alpha:1];
     
