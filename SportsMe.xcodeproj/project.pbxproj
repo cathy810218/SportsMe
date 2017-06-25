@@ -21,6 +21,9 @@
 		3D69F7B11EFF064500D16898 /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D69F7AF1EFF064500D16898 /* CategoryCell.xib */; };
 		3D9819361EFF258500C9F6DF /* Team.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D9819351EFF258500C9F6DF /* Team.m */; };
 		3D98193C1EFF25B600C9F6DF /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D98193B1EFF25B600C9F6DF /* Game.m */; };
+		3D98194A1EFF91A500C9F6DF /* TeamsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D9819491EFF91A500C9F6DF /* TeamsViewController.m */; };
+		3D98194E1EFF92C400C9F6DF /* TeamCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D98194C1EFF92C400C9F6DF /* TeamCell.m */; };
+		3D98194F1EFF92C400C9F6DF /* TeamCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D98194D1EFF92C400C9F6DF /* TeamCell.xib */; };
 		3DBA9F941EFEEE53003A7721 /* CategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DBA9F931EFEEE53003A7721 /* CategoriesViewController.m */; };
 		71E5C0321EFF0E890011A455 /* SportsAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 71E5C0311EFF0E890011A455 /* SportsAPI.m */; };
 		71E5C0381EFF4A1E0011A455 /* LeagueOfLegendsAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 71E5C0371EFF4A1E0011A455 /* LeagueOfLegendsAPI.m */; };
@@ -70,6 +73,11 @@
 		3D9819351EFF258500C9F6DF /* Team.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Team.m; sourceTree = "<group>"; };
 		3D98193A1EFF25B600C9F6DF /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
 		3D98193B1EFF25B600C9F6DF /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
+		3D9819481EFF91A500C9F6DF /* TeamsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeamsViewController.h; sourceTree = "<group>"; };
+		3D9819491EFF91A500C9F6DF /* TeamsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeamsViewController.m; sourceTree = "<group>"; };
+		3D98194B1EFF92C400C9F6DF /* TeamCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeamCell.h; sourceTree = "<group>"; };
+		3D98194C1EFF92C400C9F6DF /* TeamCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeamCell.m; sourceTree = "<group>"; };
+		3D98194D1EFF92C400C9F6DF /* TeamCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TeamCell.xib; sourceTree = "<group>"; };
 		3DBA9F921EFEEE53003A7721 /* CategoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoriesViewController.h; sourceTree = "<group>"; };
 		3DBA9F931EFEEE53003A7721 /* CategoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoriesViewController.m; sourceTree = "<group>"; };
 		71E5C0301EFF0E890011A455 /* SportsAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SportsAPI.h; sourceTree = "<group>"; };
@@ -204,6 +212,10 @@
 				3D69F7AD1EFF064500D16898 /* CategoryCell.h */,
 				3D69F7AE1EFF064500D16898 /* CategoryCell.m */,
 				3D69F7AF1EFF064500D16898 /* CategoryCell.xib */,
+				3D5B613B1EFEE2B0001DB05A /* LaunchScreen.storyboard */,
+				3D98194B1EFF92C400C9F6DF /* TeamCell.h */,
+				3D98194C1EFF92C400C9F6DF /* TeamCell.m */,
+				3D98194D1EFF92C400C9F6DF /* TeamCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -215,6 +227,8 @@
 				3D5B61341EFEE2B0001DB05A /* MainViewController.m */,
 				3DBA9F921EFEEE53003A7721 /* CategoriesViewController.h */,
 				3DBA9F931EFEEE53003A7721 /* CategoriesViewController.m */,
+				3D9819481EFF91A500C9F6DF /* TeamsViewController.h */,
+				3D9819491EFF91A500C9F6DF /* TeamsViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -345,6 +359,7 @@
 				3D5B613D1EFEE2B0001DB05A /* LaunchScreen.storyboard in Resources */,
 				3D5B61561EFEE73C001DB05A /* GameMatchCell.xib in Resources */,
 				3D5B613A1EFEE2B0001DB05A /* Assets.xcassets in Resources */,
+				3D98194F1EFF92C400C9F6DF /* TeamCell.xib in Resources */,
 				3D5B61381EFEE2B0001DB05A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -460,6 +475,7 @@
 				71E5C03E1EFF580C0011A455 /* CounterStrikeAPI.m in Sources */,
 				3D5B61351EFEE2B0001DB05A /* MainViewController.m in Sources */,
 				3D69F7B01EFF064500D16898 /* CategoryCell.m in Sources */,
+				3D98194E1EFF92C400C9F6DF /* TeamCell.m in Sources */,
 				71E5C0381EFF4A1E0011A455 /* LeagueOfLegendsAPI.m in Sources */,
 				CD1DC3111EFF469B00E89E51 /* SoccerAPI.m in Sources */,
 				71E5C0321EFF0E890011A455 /* SportsAPI.m in Sources */,
@@ -471,6 +487,7 @@
 				CD1DC3171EFF639100E89E51 /* HockeyAPI.m in Sources */,
 				3DBA9F941EFEEE53003A7721 /* CategoriesViewController.m in Sources */,
 				3D9819361EFF258500C9F6DF /* Team.m in Sources */,
+				3D98194A1EFF91A500C9F6DF /* TeamsViewController.m in Sources */,
 				71E5C03B1EFF56AA0011A455 /* DotaAPI.m in Sources */,
 				3D5B612F1EFEE2B0001DB05A /* main.m in Sources */,
 			);

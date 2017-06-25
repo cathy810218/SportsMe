@@ -24,6 +24,6 @@ typedef NS_ENUM(NSUInteger, SMSportsType) {
 
 -(void)fetchTommorrowsGameMatchDataWithSportType:(SMSportsType)type completion:(void (^)(NSArray *games))completion;
 
--(void)fetchTommorrowsGameMatchDataWithSportType:(SMSportsType)type completion:(void (^)(NSArray *games))completion;
++ (void)fetchAllTeamsWithSportsType:(SMSportsType)type completion:(void (^)(NSArray *teams))completion;
 
 @end

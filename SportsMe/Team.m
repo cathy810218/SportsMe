@@ -15,6 +15,7 @@
     if (self) {
         self.name = name;
         self.city = city;
+        //TODO: need to add logoURL/logoImg here
     }
     return self;
 }

@@ -86,14 +86,10 @@
  }
 
 
-+ (void)fetchAllTeamsWithSportsType:(SMSportsType)type completion:(void (^)(NSArray *games))completion {
++ (void)fetchAllTeamsWithSportsType:(SMSportsType)type completion:(void (^)(NSArray *teams))completion {
     switch (type) {
         case SMSportsTypeMLB:
         {
-            BaseballAPI *baseball = [[BaseballAPI alloc] init];
-            [baseball fetchBaseballDataWithCompletion:^(NSArray *games) {
-                completion(games);
-            }];
             break;
         }
         case SMSportsTypeMLS:

@@ -1,19 +1,53 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="TeamCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="TeamCell" rowHeight="89" id="KGk-i7-Jjw" customClass="TeamCell">
+            <rect key="frame" x="0.0" y="0.0" width="361" height="127"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <frame key="frameInset" width="320" height="43"/>
+                <rect key="frame" x="0.0" y="0.0" width="321" height="126.5"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hzI-cc-mMD">
+                        <rect key="frame" x="50" y="20" width="80" height="80"/>
+                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="hzI-cc-mMD" secondAttribute="height" multiplier="1:1" id="Mak-xD-aMx"/>
+                            <constraint firstAttribute="height" constant="80" id="WU0-q5-YlO"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3NZ-hR-kqq">
+                        <rect key="frame" x="190" y="49.5" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="hzI-cc-mMD" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="F1b-oJ-Ky2"/>
+                    <constraint firstItem="hzI-cc-mMD" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="50" id="O8a-GM-x1z"/>
+                    <constraint firstAttribute="bottom" secondItem="hzI-cc-mMD" secondAttribute="bottom" constant="20" id="iG3-XT-YFA"/>
+                    <constraint firstItem="3NZ-hR-kqq" firstAttribute="leading" secondItem="hzI-cc-mMD" secondAttribute="trailing" constant="60" id="kij-g4-20N"/>
+                    <constraint firstItem="3NZ-hR-kqq" firstAttribute="centerY" secondItem="hzI-cc-mMD" secondAttribute="centerY" id="n7G-la-lX0"/>
+                    <constraint firstItem="hzI-cc-mMD" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="x2A-LJ-n8m"/>
+                </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="teamImageView" destination="hzI-cc-mMD" id="It5-8Q-DTm"/>
+                <outlet property="teamNameLabel" destination="3NZ-hR-kqq" id="VZ7-Vr-X08"/>
+            </connections>
+            <point key="canvasLocation" x="-293.5" y="-66.5"/>
         </tableViewCell>
     </objects>
 </document>
