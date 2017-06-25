@@ -70,5 +70,16 @@
 
 }
 
+-(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    int screenWidth = [UIScreen mainScreen].bounds.size.width;
+    return CGSizeMake(screenWidth/2, screenWidth/2);
+}
+
+-(UIEdgeInsets) collectionView:(UICollectionView *)collectionView layout:(UICollectionViewFlowLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
+    collectionViewLayout.minimumInteritemSpacing = 0;
+    collectionViewLayout.minimumLineSpacing = 0;
+    return UIEdgeInsetsMake(0, 0, 0, 0);
+}
+
 
 @end
