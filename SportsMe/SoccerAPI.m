@@ -22,6 +22,17 @@
     return [self.dateFormatter stringFromDate:[NSDate date]];
 }
 
+-(NSString *)getTomorrowsDate{
+    NSDateComponents *dayComponent = [[NSDateComponents alloc] init];
+    dayComponent.day = 1;
+    
+    NSCalendar *theCalendar = [NSCalendar currentCalendar];
+    NSDate *nextDate = [theCalendar dateByAddingComponents:dayComponent toDate:[NSDate date] options:0];
+    self.dateFormatter = [[NSDateFormatter alloc]init];
+    [self.dateFormatter setDateFormat:@"yyyy/MM/dd"];
+    return [self.dateFormatter stringFromDate:nextDate];
+}
+
 - (void)fetchSoccerDataWithCompletion:(void (^)(NSArray *games))completion{
     NSString *todaysDate = [self getTodaysDate];
     NSError *error;
