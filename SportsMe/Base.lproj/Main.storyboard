@@ -93,64 +93,91 @@
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CategoryCell" id="C8a-nU-FfQ" customClass="CategoryCell">
-                                        <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </view>
-                                        <size key="customSize" width="150" height="150"/>
-                                    </collectionViewCell>
-                                </cells>
+                                <cells/>
                             </collectionView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yUV-uj-gPN">
-                                <rect key="frame" x="87.5" y="233.5" width="200" height="200"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nQK-bk-9Iv">
+                                <rect key="frame" x="87.5" y="216" width="200" height="255"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="Q45-nO-lgb">
-                                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dFK-cZ-3w7">
-                                                <rect key="frame" x="0.0" y="0.0" width="200" height="66.5"/>
-                                                <state key="normal" title="League Of Legends"/>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nQ8-OO-mUt">
-                                                <rect key="frame" x="0.0" y="66.5" width="200" height="67"/>
-                                                <state key="normal" title="DOTA 2"/>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uCL-4P-nG5">
-                                                <rect key="frame" x="0.0" y="133.5" width="200" height="66.5"/>
-                                                <state key="normal" title="Counter Strikes"/>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RVd-TI-0Fp">
+                                        <rect key="frame" x="10" y="40" width="180" height="65"/>
+                                        <state key="normal" image="lol"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jgh-AG-qMt">
+                                        <rect key="frame" x="10" y="115" width="180" height="65"/>
+                                        <state key="normal" image="csgl"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w05-5k-aoJ">
+                                        <rect key="frame" x="10" y="190" width="180" height="65"/>
+                                        <state key="normal" image="data2"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KRX-Fw-SiO">
+                                        <rect key="frame" x="172" y="12" width="20" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="5SG-wy-BaQ"/>
+                                            <constraint firstAttribute="width" constant="20" id="yNr-pG-xxc"/>
+                                        </constraints>
+                                        <state key="normal" image="x"/>
+                                        <connections>
+                                            <action selector="dismissEsportsView:" destination="8XA-qU-KCl" eventType="touchUpInside" id="1eW-nb-frU"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.50702208280000005" green="0.51328641180000001" blue="0.51343184710000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="0.55886130136986301" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="63s-0F-u6G"/>
-                                    <constraint firstItem="Q45-nO-lgb" firstAttribute="leading" secondItem="yUV-uj-gPN" secondAttribute="leading" id="68T-fM-Dvv"/>
-                                    <constraint firstItem="Q45-nO-lgb" firstAttribute="top" secondItem="yUV-uj-gPN" secondAttribute="top" id="Cwb-so-bRU"/>
-                                    <constraint firstAttribute="trailing" secondItem="Q45-nO-lgb" secondAttribute="trailing" id="GsX-PQ-RFT"/>
-                                    <constraint firstAttribute="bottom" secondItem="Q45-nO-lgb" secondAttribute="bottom" id="lpQ-2h-QLE"/>
-                                    <constraint firstAttribute="width" constant="200" id="xxJ-CU-Guk"/>
+                                    <constraint firstAttribute="trailing" secondItem="w05-5k-aoJ" secondAttribute="trailing" constant="10" id="4be-kZ-KLM"/>
+                                    <constraint firstItem="jgh-AG-qMt" firstAttribute="top" secondItem="RVd-TI-0Fp" secondAttribute="bottom" constant="10" id="6pX-eE-SEO"/>
+                                    <constraint firstItem="w05-5k-aoJ" firstAttribute="leading" secondItem="nQK-bk-9Iv" secondAttribute="leading" constant="10" id="Aa4-ny-I9J"/>
+                                    <constraint firstAttribute="trailing" secondItem="jgh-AG-qMt" secondAttribute="trailing" constant="10" id="ETY-EI-AvV"/>
+                                    <constraint firstAttribute="bottom" secondItem="w05-5k-aoJ" secondAttribute="bottom" id="G39-D2-73L"/>
+                                    <constraint firstAttribute="trailing" secondItem="RVd-TI-0Fp" secondAttribute="trailing" constant="10" id="Hi7-7U-p3y"/>
+                                    <constraint firstItem="jgh-AG-qMt" firstAttribute="leading" secondItem="nQK-bk-9Iv" secondAttribute="leading" constant="10" id="NuC-ng-Xfz"/>
+                                    <constraint firstAttribute="width" constant="200" id="bum-MP-4VF"/>
+                                    <constraint firstAttribute="trailing" secondItem="KRX-Fw-SiO" secondAttribute="trailing" constant="8" id="cK6-Ia-bQ1"/>
+                                    <constraint firstItem="RVd-TI-0Fp" firstAttribute="top" secondItem="KRX-Fw-SiO" secondAttribute="bottom" constant="8" id="jhe-3L-A19"/>
+                                    <constraint firstItem="w05-5k-aoJ" firstAttribute="top" secondItem="jgh-AG-qMt" secondAttribute="bottom" constant="10" id="wiC-Iy-yda"/>
+                                    <constraint firstAttribute="height" constant="255" id="ylN-IV-s5u"/>
+                                    <constraint firstItem="RVd-TI-0Fp" firstAttribute="leading" secondItem="nQK-bk-9Iv" secondAttribute="leading" constant="10" id="zQF-xE-kZv"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="77J-cG-Up7" firstAttribute="top" secondItem="c0h-rA-drR" secondAttribute="bottom" id="9Ld-wX-4Yq"/>
+                            <constraint firstItem="nQK-bk-9Iv" firstAttribute="centerX" secondItem="5z5-Ar-xNg" secondAttribute="centerX" id="Fcg-ke-39f"/>
                             <constraint firstItem="77J-cG-Up7" firstAttribute="leading" secondItem="5z5-Ar-xNg" secondAttribute="leading" id="PSh-C6-Unn"/>
-                            <constraint firstItem="yUV-uj-gPN" firstAttribute="centerX" secondItem="5z5-Ar-xNg" secondAttribute="centerX" id="TUm-10-SIm"/>
-                            <constraint firstItem="yUV-uj-gPN" firstAttribute="centerY" secondItem="5z5-Ar-xNg" secondAttribute="centerY" id="dlQ-VZ-wfd"/>
                             <constraint firstAttribute="trailing" secondItem="77J-cG-Up7" secondAttribute="trailing" id="iJJ-OS-Ndg"/>
                             <constraint firstItem="K2w-0E-P9S" firstAttribute="top" secondItem="77J-cG-Up7" secondAttribute="bottom" id="jzE-bd-1Xz"/>
+                            <constraint firstItem="nQK-bk-9Iv" firstAttribute="centerY" secondItem="5z5-Ar-xNg" secondAttribute="centerY" constant="10" id="rdn-5S-Noe"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Categories" id="STe-3h-glI"/>
                     <connections>
                         <outlet property="collectionView" destination="77J-cG-Up7" id="Nhu-kC-PFf"/>
-                        <outlet property="esportsView" destination="yUV-uj-gPN" id="3w7-uq-mDu"/>
+                        <outlet property="esportsView" destination="nQK-bk-9Iv" id="kG5-Fz-Yvl"/>
                         <segue destination="xOr-04-SDN" kind="show" identifier="TeamsViewController" id="PUv-by-p5G"/>
                     </connections>
                 </viewController>
@@ -227,6 +254,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="csgl" width="200" height="65"/>
+        <image name="data2" width="200" height="65"/>
+        <image name="lol" width="200" height="65"/>
         <image name="placeholder" width="1010" height="577"/>
+        <image name="x" width="75" height="75"/>
     </resources>
 </document>
