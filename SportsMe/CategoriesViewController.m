@@ -33,11 +33,11 @@
     self.buttonImages = @[@"mlb", @"mls", @"esports", @"nba", @"nfl"];
     self.types = @[@0, @1, @2, @5, @6];
     
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapToHideEsportsView)];
+    self.esportsView.hidden = YES;
 }
 
-- (void)tapToHideEsportsView {
-    
+- (IBAction)dismissEsportsView:(UIButton *)sender {
+    self.esportsView.hidden = YES;
 }
 
 - (void)setupEsportsView {
@@ -74,6 +74,7 @@
         // Esport
         NSLog(@"Esports");
         self.esportsView.hidden = NO;
+
     } else {
         self.esportsView.hidden = YES;
         [self performSegueWithIdentifier:@"TeamsViewController" sender:indexPath];

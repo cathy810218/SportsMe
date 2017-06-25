@@ -13,6 +13,8 @@
 @interface LeagueOfLegendsAPI()
 
 @property(strong, nonatomic) NSDateFormatter *dateFormatter;
+@property (strong, nonatomic) NSMutableDictionary *teamDictionary;
+
 
 @end
 @implementation LeagueOfLegendsAPI
@@ -70,6 +72,42 @@
     }
     completion(gameObjects);
     
+}
+
+- (void)fetchAllTeamsDataWithComletion:(void (^)(NSArray *AmericanLeagueTeams, NSArray *NationalLeagueTeams))completion {
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"LOLTeams" ofType:@"json"];
+    NSURL *localFileURL = [NSURL fileURLWithPath:path];
+    NSData *data = [NSData dataWithContentsOfURL:localFileURL];
+    
+    NSError *error;
+    NSDictionary *json =[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+    
+    NSMutableArray *alTeamArray = [[NSMutableArray alloc]init];
+    NSArray *divisions = json[@"leagues"][0][@"divisions"];
+    for (NSDictionary *obj in divisions) {
+        for (NSDictionary *alteam in obj[@"teams"]) {
+            NSString *name = alteam[@"name"];
+            NSString *market = alteam[@"market"];
+            Team *team = [[Team alloc] initWithTeamName:name andCity:market];
+            team.logo = [UIImage imageNamed:[NSString stringWithFormat:@"%@ %@", market, name]];
+            [alTeamArray addObject:team];
+            self.teamDictionary[name] = team;
+        }
+    }
+    
+    NSMutableArray *nlTeamArray = [[NSMutableArray alloc]init];
+    NSArray *divisions2 = json[@"leagues"][1][@"divisions"];
+    for (NSDictionary *obj in divisions2) {
+        for (NSDictionary *nlteam in obj[@"teams"]) {
+            NSString *name = nlteam[@"name"];
+            NSString *market = nlteam[@"market"];
+            Team *team = [[Team alloc] initWithTeamName:name andCity:market];
+            team.logo = [UIImage imageNamed:[NSString stringWithFormat:@"%@ %@", market, name]];
+            [nlTeamArray addObject:team];
+            self.teamDictionary[name] = team;
+        }
+    }
+    completion(alTeamArray, nlTeamArray);
 }
 
 @end
