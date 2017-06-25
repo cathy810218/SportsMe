@@ -9,7 +9,6 @@
 #import "MainViewController.h"
 #import "GameMatchCell.h"
 #import "SportsAPI.h"
-#import "BasketballAPI.h"
 
 @interface MainViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -24,7 +23,7 @@
 @implementation MainViewController
 
 - (void)viewDidLoad {
-
+    
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     self.tableView.delegate = self;

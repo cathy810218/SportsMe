@@ -15,7 +15,8 @@ typedef NS_ENUM(NSUInteger, SMSportsType) {
     SMSportsTypeNFL,
     SMSportsTypeMLB,
     SMSportsTypeNBA,
-    SMSportsTypeMLS
+    SMSportsTypeMLS,
+    SMSportsTypeNHL
 };
 
 @interface SportsAPI : NSObject 

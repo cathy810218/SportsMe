@@ -10,6 +10,8 @@
 #import "APIKeys.h"
 #import "BaseballAPI.h"
 #import "SoccerAPI.h"
+#import "BasketballAPI.h"
+#import "HockeyAPI.h"
 @interface SportsAPI()<NSXMLParserDelegate>
 
 @end
@@ -47,13 +49,25 @@
          }
          case SMSportsTypeNBA:
          {
-             
+             BasketballAPI *basketball = [[BasketballAPI alloc] init];
+             [basketball fetchBasketballDataWithCompletion:^(NSArray *games) {
+                 completion(games);
+             }];
+             break;
          }
         case SMSportsTypeNFL:
          {
              
          }
-
+        case SMSportsTypeNHL:
+         {
+             HockeyAPI *hockey = [[HockeyAPI alloc] init];
+             [hockey fetchHockeyDataWithCompletion:^(NSArray *games) {
+                 completion(games);
+             }];
+             break;
+         }
+             
      }
  }
 
