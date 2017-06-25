@@ -7,7 +7,6 @@
 //
 
 #import "CategoryCell.h"
-#import <Masonry/Masonry.h>
 
 @interface CategoryCell()
 @property (strong, nonatomic) UIView *dimView;
