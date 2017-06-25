@@ -19,6 +19,8 @@
 		3D5B61591EFEE9B5001DB05A /* GameMatchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D5B61581EFEE9B5001DB05A /* GameMatchCell.m */; };
 		3D69F7B01EFF064500D16898 /* CategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D69F7AE1EFF064500D16898 /* CategoryCell.m */; };
 		3D69F7B11EFF064500D16898 /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D69F7AF1EFF064500D16898 /* CategoryCell.xib */; };
+		3D9819361EFF258500C9F6DF /* Team.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D9819351EFF258500C9F6DF /* Team.m */; };
+		3D98193C1EFF25B600C9F6DF /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D98193B1EFF25B600C9F6DF /* Game.m */; };
 		3DBA9F941EFEEE53003A7721 /* CategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DBA9F931EFEEE53003A7721 /* CategoriesViewController.m */; };
 		71E5C0321EFF0E890011A455 /* SportsAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 71E5C0311EFF0E890011A455 /* SportsAPI.m */; };
 		7BFB7AA29AEB654BF0D5F4AC /* libPods-SportsMeTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C104C4FAF7E6A313D8118C97 /* libPods-SportsMeTests.a */; };
@@ -58,6 +60,10 @@
 		3D69F7AD1EFF064500D16898 /* CategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryCell.h; sourceTree = "<group>"; };
 		3D69F7AE1EFF064500D16898 /* CategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryCell.m; sourceTree = "<group>"; };
 		3D69F7AF1EFF064500D16898 /* CategoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
+		3D9819341EFF258500C9F6DF /* Team.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Team.h; sourceTree = "<group>"; };
+		3D9819351EFF258500C9F6DF /* Team.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Team.m; sourceTree = "<group>"; };
+		3D98193A1EFF25B600C9F6DF /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
+		3D98193B1EFF25B600C9F6DF /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
 		3DBA9F921EFEEE53003A7721 /* CategoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoriesViewController.h; sourceTree = "<group>"; };
 		3DBA9F931EFEEE53003A7721 /* CategoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoriesViewController.m; sourceTree = "<group>"; };
 		71E5C0301EFF0E890011A455 /* SportsAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SportsAPI.h; sourceTree = "<group>"; };
@@ -161,6 +167,10 @@
 		3D5B61521EFEE42E001DB05A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3D9819341EFF258500C9F6DF /* Team.h */,
+				3D9819351EFF258500C9F6DF /* Team.m */,
+				3D98193A1EFF25B600C9F6DF /* Game.h */,
+				3D98193B1EFF25B600C9F6DF /* Game.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -422,8 +432,10 @@
 				71E5C0321EFF0E890011A455 /* SportsAPI.m in Sources */,
 				CD970AAB1EFF220A00BE5299 /* APIKeys.m in Sources */,
 				3D5B61591EFEE9B5001DB05A /* GameMatchCell.m in Sources */,
+				3D98193C1EFF25B600C9F6DF /* Game.m in Sources */,
 				3D5B61321EFEE2B0001DB05A /* AppDelegate.m in Sources */,
 				3DBA9F941EFEEE53003A7721 /* CategoriesViewController.m in Sources */,
+				3D9819361EFF258500C9F6DF /* Team.m in Sources */,
 				3D5B612F1EFEE2B0001DB05A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
