@@ -72,4 +72,22 @@
     return self;
 }
 
+-(instancetype)initWithNHLGame:(NSDictionary *)object{
+    self = [super init];
+    if (self){
+        NSString *homeTeamCity = [[object[@"home"][@"name"] componentsSeparatedByString:@" "] firstObject];
+        NSMutableArray *homeTeamName = [[object[@"home"][@"name"] componentsSeparatedByString:@" "] mutableCopy];
+        [homeTeamName removeObjectAtIndex:0];
+        NSString *awayTeamCity = [[object[@"away"][@"name"] componentsSeparatedByString:@" "] firstObject];
+        NSMutableArray *awayTeamName = [[object[@"away"][@"name"] componentsSeparatedByString:@" "] mutableCopy];
+        [awayTeamName removeObjectAtIndex:0];
+        self.homeTeam = [[Team alloc] initWithTeamName:[homeTeamName componentsJoinedByString:@" "] andCity:homeTeamCity];
+        self.awayTeam = [[Team alloc] initWithTeamName:[awayTeamName componentsJoinedByString:@" "] andCity:awayTeamCity];
+        self.gameDate = object[@"scheduled"];
+        self.channel = object[@"broadcast"][@"network"];
+    }
+    
+    return self;
+}
+
 @end
