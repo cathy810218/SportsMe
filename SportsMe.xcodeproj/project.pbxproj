@@ -26,6 +26,9 @@
 		3D98194F1EFF92C400C9F6DF /* TeamCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D98194D1EFF92C400C9F6DF /* TeamCell.xib */; };
 		3DBA9F941EFEEE53003A7721 /* CategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DBA9F931EFEEE53003A7721 /* CategoriesViewController.m */; };
 		3DDA5D421EFFC2DA003D9FBA /* NSString+DateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DDA5D411EFFC2DA003D9FBA /* NSString+DateFormatter.m */; };
+		3DDA5D491F003998003D9FBA /* MLBTeams.json in Resources */ = {isa = PBXBuildFile; fileRef = 3DDA5D471F003998003D9FBA /* MLBTeams.json */; };
+		3DDA5D4A1F003998003D9FBA /* NBATeams.json in Resources */ = {isa = PBXBuildFile; fileRef = 3DDA5D481F003998003D9FBA /* NBATeams.json */; };
+		3DDA5D4C1F003A99003D9FBA /* NFLTeams.json in Resources */ = {isa = PBXBuildFile; fileRef = 3DDA5D4B1F003A99003D9FBA /* NFLTeams.json */; };
 		71E5C0321EFF0E890011A455 /* SportsAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 71E5C0311EFF0E890011A455 /* SportsAPI.m */; };
 		71E5C0381EFF4A1E0011A455 /* LeagueOfLegendsAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 71E5C0371EFF4A1E0011A455 /* LeagueOfLegendsAPI.m */; };
 		71E5C03B1EFF56AA0011A455 /* DotaAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 71E5C03A1EFF56AA0011A455 /* DotaAPI.m */; };
@@ -83,6 +86,9 @@
 		3DBA9F931EFEEE53003A7721 /* CategoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoriesViewController.m; sourceTree = "<group>"; };
 		3DDA5D401EFFC2DA003D9FBA /* NSString+DateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+DateFormatter.h"; sourceTree = "<group>"; };
 		3DDA5D411EFFC2DA003D9FBA /* NSString+DateFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+DateFormatter.m"; sourceTree = "<group>"; };
+		3DDA5D471F003998003D9FBA /* MLBTeams.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MLBTeams.json; sourceTree = "<group>"; };
+		3DDA5D481F003998003D9FBA /* NBATeams.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = NBATeams.json; sourceTree = "<group>"; };
+		3DDA5D4B1F003A99003D9FBA /* NFLTeams.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = NFLTeams.json; sourceTree = "<group>"; };
 		71E5C0301EFF0E890011A455 /* SportsAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SportsAPI.h; sourceTree = "<group>"; };
 		71E5C0311EFF0E890011A455 /* SportsAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SportsAPI.m; sourceTree = "<group>"; };
 		71E5C0361EFF4A1E0011A455 /* LeagueOfLegendsAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeagueOfLegendsAPI.h; sourceTree = "<group>"; };
@@ -174,6 +180,9 @@
 		3D5B612D1EFEE2B0001DB05A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3DDA5D471F003998003D9FBA /* MLBTeams.json */,
+				3DDA5D481F003998003D9FBA /* NBATeams.json */,
+				3DDA5D4B1F003A99003D9FBA /* NFLTeams.json */,
 				3D5B613B1EFEE2B0001DB05A /* LaunchScreen.storyboard */,
 				CD970AA91EFF220A00BE5299 /* APIKeys.h */,
 				CD970AAA1EFF220A00BE5299 /* APIKeys.m */,
@@ -367,9 +376,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DDA5D4A1F003998003D9FBA /* NBATeams.json in Resources */,
 				3D69F7B11EFF064500D16898 /* CategoryCell.xib in Resources */,
 				3D5B613D1EFEE2B0001DB05A /* LaunchScreen.storyboard in Resources */,
 				3D5B61561EFEE73C001DB05A /* GameMatchCell.xib in Resources */,
+				3DDA5D491F003998003D9FBA /* MLBTeams.json in Resources */,
+				3DDA5D4C1F003A99003D9FBA /* NFLTeams.json in Resources */,
 				3D5B613A1EFEE2B0001DB05A /* Assets.xcassets in Resources */,
 				3D98194F1EFF92C400C9F6DF /* TeamCell.xib in Resources */,
 				3D5B61381EFEE2B0001DB05A /* Main.storyboard in Resources */,

@@ -13,6 +13,8 @@
 @interface CategoriesViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (strong, nonatomic) NSArray *buttonImages;
+@property (strong, nonatomic) NSArray *types;
+@property (weak, nonatomic) IBOutlet UIView *esportsView;
 
 @end
 
@@ -20,19 +22,26 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setupEsportsView];
+    self.esportsView.hidden = YES;
+
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
-    self.collectionView.allowsMultipleSelection = YES;
+    self.collectionView.allowsSelection = YES;
     UINib *nib = [UINib nibWithNibName:@"CategoryCell" bundle:[NSBundle mainBundle]];
     [self.collectionView registerNib:nib forCellWithReuseIdentifier:@"CategoryCell"];
     
     self.buttonImages = @[@"mlb", @"mls", @"esports", @"nba", @"nfl"];
+    self.types = @[@0, @1, @2, @5, @6];
+}
+
+- (void)setupEsportsView {
+    self.esportsView.layer.cornerRadius = 5.0;
+    self.esportsView.layer.masksToBounds = YES;
     
 }
 
-
-
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(NSIndexPath *)sender {
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(NSIndexPath *)sender {
     [super prepareForSegue:segue sender:sender];
     NSIndexPath *indexPath = sender;
     if ([segue.identifier isEqualToString:@"TeamsViewController"]) {
@@ -50,12 +59,21 @@
     CategoryCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CategoryCell" forIndexPath:indexPath];
     UIImage *img = [UIImage imageNamed:self.buttonImages[indexPath.row]];
     cell.imageView.image = img;
-
+    cell.sportsType = [self.types[indexPath.row] unsignedIntegerValue];
     return cell;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    [self performSegueWithIdentifier:@"TeamsViewController" sender:indexPath];
+    CategoryCell *currentCell = (CategoryCell *)[collectionView cellForItemAtIndexPath:indexPath];
+    if (currentCell.sportsType == 2) {
+        // Esport
+        NSLog(@"Esports");
+        self.esportsView.hidden = NO;
+    } else {
+        self.esportsView.hidden = YES;
+        [self performSegueWithIdentifier:@"TeamsViewController" sender:indexPath];
+    }
+    
 }
 
 

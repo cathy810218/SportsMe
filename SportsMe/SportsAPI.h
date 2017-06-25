@@ -16,19 +16,19 @@
 #import "CounterStrikeAPI.h"
 
 typedef NS_ENUM(NSUInteger, SMSportsType) {
+    SMSportsTypeMLB,
+    SMSportsTypeMLS,
     SMSportsTypeESportLOL,
     SMSportsTypeESportDOTA,
     SMSportsTypeESportCSGL,
-    SMSportsTypeNFL,
-    SMSportsTypeMLB,
     SMSportsTypeNBA,
-    SMSportsTypeMLS,
+    SMSportsTypeNFL,
     SMSportsTypeNHL
 };
 
 @interface SportsAPI : NSObject
 
-+ (NSDictionary *)sportsTypeDisplayNames;
++ (NSString *)sportsTypeDisplayNames:(SMSportsType)type;
 
 + (void)fetchGameMatchDataWithSportsType:(SMSportsType)type completion:(void (^)(NSArray *games))completion;
 

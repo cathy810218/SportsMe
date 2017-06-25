@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SportsAPI.h"
 
 @interface CategoryCell : UICollectionViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
-
+@property (assign, nonatomic) SMSportsType sportsType;
 @end

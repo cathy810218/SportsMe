@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface Team : NSObject
+@interface Team : NSObject <NSCoding>
 
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSString *city;

@@ -20,6 +20,8 @@
 @property (strong, nonatomic) NSArray *favoriteGames;
 @property (strong, nonatomic) NSArray *displayGames;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+@property (weak, nonatomic) IBOutlet UIImageView *placeholderImageView;
+
 @end
 
 @implementation MainViewController
@@ -37,30 +39,35 @@
     self.tableView.estimatedRowHeight = 300;
     
     // Set up right bar button item
-    UIBarButtonItem *btn=[[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"navitems"] style:UIBarButtonItemStylePlain target:self action:@selector(categoryButtonPressed:)];
+    UIBarButtonItem *btn=[[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"square"] style:UIBarButtonItemStylePlain target:self action:@selector(categoryButtonPressed:)];
     self.navigationItem.rightBarButtonItem = btn;
     
     self.activityIndicator.hidden = YES;
     [self getTodaysGames];
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     [self checkIfDisplayGamesDataExist];
 }
 
 - (void)checkIfDisplayGamesDataExist {
     if (self.displayGames == nil) {
-        //TODO: Display placeholder to tell the user to go to category
-        
+        self.placeholderImageView.hidden = NO;
     } else {
-        //Remove placeholder
+        self.placeholderImageView.hidden = YES;
     }
 }
 
 
 - (void)getTodaysGames {
-    NSDictionary *dict = [[NSUserDefaults standardUserDefaults] objectForKey:@"kGameDict"];
-    [SportsAPI fetchGameMatchDataWithSportsType:SMSportsTypeMLB completion:^(NSArray *games) {
-        self.displayGames = games;
-    }];
-//    for (NSString *key in [dict allKeys]) {
+//    NSDictionary *dict = [[NSUserDefaults standardUserDefaults] objectForKey:@"kGames"];
+//    NSLog(@"current selected sports: %@", [dict allKeys]);
+
+//    [SportsAPI fetchGameMatchDataWithSportsType:SMSportsTypeMLB completion:^(NSArray *games) {
+//        self.displayGames = games;
+//    }];
+//    for (SMSportsType *key in [dict allKeys]) {
 //        switch ([key integerValue]) {
 //                // Append it's value to self.displayGames
 //            case SMSportsTypeESportLOL:
@@ -84,6 +91,10 @@
 //                break;
 //        }
 //    }
+}
+
+- (void)getTomorrowsGames {
+    
 }
 
 

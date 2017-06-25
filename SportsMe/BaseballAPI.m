@@ -26,6 +26,7 @@
         shared.teams = [[NSMutableArray alloc] init];
         [shared fetchAllTeamsDataWithComletion:^(NSArray *AmericanLeagueTeams, NSArray *NationalLeagueTeams) {
             shared.teams = [AmericanLeagueTeams arrayByAddingObjectsFromArray:NationalLeagueTeams];
+//            [[NSUserDefaults standardUserDefaults] setObject:shared.teams forKey:@"kMLBTeams"];
         }];
     });
     return shared;
@@ -55,7 +56,7 @@
     NSString *urlString = [[NSString alloc] initWithFormat:@"https://api.sportradar.us/mlb-t5/games/%@/schedule.json?api_key=%@",todaysDate, secretKey];
     NSURL *url = [[NSURL alloc] initWithString:urlString];
     NSData *data = [NSData dataWithContentsOfURL:url];
-    NSDictionary *json =[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+    NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
     NSArray *games = json[@"league"][@"games"];
     NSMutableArray *gameObjects = [[NSMutableArray alloc]init];
     for (NSDictionary *dict in games) {
@@ -67,9 +68,7 @@
         
         [gameObjects addObject:game];
     }
-
     completion(gameObjects);
-    
 }
 
 - (void)fetchTomorrowsBaseballDataWithCompletion:(void (^)(NSArray *games))completion{
@@ -80,21 +79,23 @@
     NSData *data = [NSData dataWithContentsOfURL:url];
     NSDictionary *json =[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
     NSArray *games = json[@"league"][@"games"];
-    //    NSLog(@"Games: %@", games);
     NSMutableArray *gameObjects = [[NSMutableArray alloc]init];
     for (NSDictionary *dict in games) {
         Game *game = [[Game alloc]initWithMLBGame:dict];
         [gameObjects addObject:game];
     }
-    
     completion(gameObjects);
 }
 
 - (void)fetchAllTeamsDataWithComletion:(void (^)(NSArray *AmericanLeagueTeams, NSArray *NationalLeagueTeams))completion {
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"MLBTeams" ofType:@"json"];
+    NSURL *localFileURL = [NSURL fileURLWithPath:path];
+    NSData *data = [NSData dataWithContentsOfURL:localFileURL];
+    
     NSError *error;
-    NSString *urlString = [[NSString alloc] initWithFormat:@"https://api.sportradar.us/mlb-t6/league/hierarchy.json?api_key=%@", secretKey];
-    NSURL *url = [[NSURL alloc] initWithString:urlString];
-    NSData *data = [NSData dataWithContentsOfURL:url];
+//    NSString *urlString = [[NSString alloc] initWithFormat:@"https://api.sportradar.us/mlb-t6/league/hierarchy.json?api_key=%@", secretKey];
+//    NSURL *url = [[NSURL alloc] initWithString:urlString];
+//    NSData *data = [NSData dataWithContentsOfURL:url];
     NSDictionary *json =[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
     
     NSMutableArray *alTeamArray = [[NSMutableArray alloc]init];

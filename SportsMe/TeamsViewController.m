@@ -28,9 +28,24 @@
     [self.tableView registerNib:nib forCellReuseIdentifier:@"TeamCell"];
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.estimatedRowHeight = 120;
-    [SportsAPI fetchAllTeamsWithSportsType:self.sportsType completion:^(NSArray *teams) {
-        self.teams = teams;
-    }];
+    
+    NSString *sportsName = [SportsAPI sportsTypeDisplayNames:self.sportsType];
+    
+    NSData *data = [[NSUserDefaults standardUserDefaults] objectForKey:@"kGames"];
+    NSDictionary *dict = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+    
+    if (dict == nil) {
+        [SportsAPI fetchAllTeamsWithSportsType:self.sportsType completion:^(NSArray *teams) {
+            self.teams = teams;
+            NSDictionary *sportsToGames = @{sportsName:teams};
+            
+            NSData *dataSave = [NSKeyedArchiver archivedDataWithRootObject:sportsToGames];
+            [[NSUserDefaults standardUserDefaults] setObject:dataSave forKey:@"kGames"];
+            [[NSUserDefaults standardUserDefaults] synchronize];            
+        }];
+    } else {
+        self.teams = dict[sportsName];
+    }
 }
 
 - (IBAction)selectAllAction:(UIBarButtonItem *)sender {
@@ -49,6 +64,9 @@
     cell.teamImageView.image = team.logo;
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 }
 
 @end
