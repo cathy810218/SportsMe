@@ -116,7 +116,7 @@
             </objects>
             <point key="canvasLocation" x="1621.5999999999999" y="-645.42728635682158"/>
         </scene>
-        <!--Teams View Controller-->
+        <!--Select Teams-->
         <scene sceneID="OJO-I0-lfP">
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="xOr-04-SDN" customClass="TeamsViewController" sceneMemberID="viewController">
@@ -149,6 +149,13 @@
                             <constraint firstItem="Bzw-M4-4tW" firstAttribute="top" secondItem="vlm-Ti-L37" secondAttribute="bottom" id="yo9-gW-muc"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Select Teams" id="RxY-My-SZn">
+                        <barButtonItem key="rightBarButtonItem" title="All" id="WTe-rh-Je8">
+                            <connections>
+                                <action selector="selectAllAction:" destination="xOr-04-SDN" id="Vtn-6O-NoB"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="searchBar" destination="BRX-Ih-wBB" id="p8O-ca-RNF"/>
                         <outlet property="tableView" destination="vlm-Ti-L37" id="Itf-sG-Ie7"/>

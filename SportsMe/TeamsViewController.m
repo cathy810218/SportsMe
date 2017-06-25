@@ -40,6 +40,10 @@
     [self.tableView reloadData];
 }
 
+- (IBAction)selectAllAction:(UIBarButtonItem *)sender {
+    
+}
+
 #pragma mark - UITableViewDelegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.teams.count;

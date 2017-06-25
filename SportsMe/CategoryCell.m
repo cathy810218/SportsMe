@@ -21,17 +21,14 @@
     
 }
 
-
-- (void)setSelected:(BOOL)selected {
-    [super setSelected:selected];
-    
-    if (selected) {
-        NSLog(@"Select!");
+-(void)setHighlighted:(BOOL)highlighted {
+    [super setHighlighted:highlighted];
+    if (highlighted) {
+        self.transform = CGAffineTransformMakeScale(0.96, 0.96);
     } else {
-        NSLog(@"Deselect");
+        self.transform = CGAffineTransformIdentity;
     }
 }
-
 
 
 @end
