@@ -11,9 +11,7 @@
 @interface Team : NSObject
 
 @property (strong, nonatomic) NSString *name;
-@property (strong, nonatomic) NSString *location;
-@property (strong, nonatomic) NSString *teamId;
+@property (strong, nonatomic) NSString *city;
 
-
-- (instancetype)initWithObject:(NSDictionary *)jsonObject;
+- (instancetype)initWithTeamName:(NSString *)name andCity:(NSString *)city;
 @end

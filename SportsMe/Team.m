@@ -10,11 +10,11 @@
 
 @implementation Team
 
-- (instancetype)initWithObject:(NSDictionary *)jsonObject {
+- (instancetype)initWithTeamName:(NSString *)name andCity:(NSString *)city{
     self = [super init];
     if (self) {
-        self.name = jsonObject[@"name"];
-        self.location = jsonObject[@"location"];
+        self.name = name;
+        self.city = city;
     }
     return self;
 }
