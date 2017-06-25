@@ -90,4 +90,10 @@
     return self;
 }
 
+- (NSString *)getTodaysDate{
+    self.dateFormatter = [[NSDateFormatter alloc]init];
+    [self.dateFormatter setDateFormat:@"yyyy/MM/dd"];
+    return [self.dateFormatter stringFromDate:[NSDate date]];
+}
+
 @end

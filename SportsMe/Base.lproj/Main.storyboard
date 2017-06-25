@@ -36,6 +36,10 @@
                                     <action selector="segmentControlAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="9lo-Lz-jLW"/>
                                 </connections>
                             </segmentedControl>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="UyJ-ep-Kl1">
+                                <rect key="frame" x="0.0" y="323" width="375" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -48,16 +52,12 @@
                             <constraint firstItem="ooP-ft-Gqe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="w0d-zW-6dK"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="SportsMe" id="SHw-5Y-1Iq">
-                        <barButtonItem key="rightBarButtonItem" title="Categories" id="Qzb-X7-b2Z">
-                            <connections>
-                                <segue destination="8XA-qU-KCl" kind="show" id="kWz-ga-5Td"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="SportsMe" id="SHw-5Y-1Iq"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="UyJ-ep-Kl1" id="u6O-Nc-bv1"/>
                         <outlet property="segmentedControl" destination="JnF-Wl-cwN" id="Beg-uO-9j1"/>
                         <outlet property="tableView" destination="ooP-ft-Gqe" id="br7-fr-aGt"/>
+                        <segue destination="8XA-qU-KCl" kind="show" identifier="CategoriesViewController" id="Y0v-jq-2tm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -128,7 +128,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vlm-Ti-L37">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vlm-Ti-L37">
                                 <rect key="frame" x="0.0" y="108" width="375" height="559"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
@@ -150,7 +150,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Select Teams" id="RxY-My-SZn">
-                        <barButtonItem key="rightBarButtonItem" title="All" id="WTe-rh-Je8">
+                        <barButtonItem key="rightBarButtonItem" title="Select All" id="WTe-rh-Je8">
                             <connections>
                                 <action selector="selectAllAction:" destination="xOr-04-SDN" id="Vtn-6O-NoB"/>
                             </connections>

@@ -20,7 +20,10 @@
     [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"nav_img"] forBarMetrics:UIBarMetricsDefault];
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     [[UINavigationBar appearance] setTranslucent:YES];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
     
+    NSMutableDictionary *gamesDict = [[NSMutableDictionary alloc] init];
+    [[NSUserDefaults standardUserDefaults] setObject:gamesDict forKey:@"kGameDict"];
     return YES;
 }
 

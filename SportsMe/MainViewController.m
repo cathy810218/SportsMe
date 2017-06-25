@@ -8,6 +8,9 @@
 
 #import "MainViewController.h"
 #import "GameMatchCell.h"
+#import "CategoriesViewController.h"
+#import "Game.h"
+#import "Team.h"
 
 @interface MainViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -15,7 +18,8 @@
 @property (strong, nonatomic) NSArray *todayGames;
 @property (strong, nonatomic) NSArray *tomorrowGames;
 @property (strong, nonatomic) NSArray *favoriteGames;
-
+@property (strong, nonatomic) NSArray *displayGames;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @end
 
 @implementation MainViewController
@@ -23,37 +27,87 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    // Set up table view
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    
     UINib *nib = [UINib nibWithNibName:@"GameMatchCell" bundle:[NSBundle mainBundle]];
     [self.tableView registerNib:nib forCellReuseIdentifier:@"GameMatchCell"];
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.estimatedRowHeight = 300;
-    [self getTodaysGames];
     
-    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"nav_bg.png"] forBarMetrics:UIBarMetricsDefault];
-
+    // Set up right bar button item
+    UIBarButtonItem *btn=[[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"navitems"] style:UIBarButtonItemStylePlain target:self action:@selector(categoryButtonPressed:)];
+    self.navigationItem.rightBarButtonItem = btn;
+    
+    self.activityIndicator.hidden = YES;
+    [self getTodaysGames];
+    [self checkIfDisplayGamesDataExist];
 }
+
+- (void)checkIfDisplayGamesDataExist {
+    if (self.displayGames == nil) {
+        //TODO: Display placeholder to tell the user to go to category
+        
+    } else {
+        //Remove placeholder
+    }
+}
+
 
 - (void)getTodaysGames {
-  
+    NSDictionary *dict = [[NSUserDefaults standardUserDefaults] objectForKey:@"kGameDict"];
+    [SportsAPI fetchGameMatchDataWithSportsType:SMSportsTypeMLB completion:^(NSArray *games) {
+        self.displayGames = games;
+    }];
+//    for (NSString *key in [dict allKeys]) {
+//        switch ([key integerValue]) {
+//                // Append it's value to self.displayGames
+//            case SMSportsTypeESportLOL:
+//
+//                break;
+//            case SMSportsTypeESportDOTA:
+//                break;
+//            case SMSportsTypeESportCSGL:
+//                break;
+//            case SMSportsTypeNFL:
+//                break;
+//            case SMSportsTypeMLB:
+//                break;
+//            case SMSportsTypeNBA:
+//                break;
+//            case SMSportsTypeMLS:
+//                break;
+//            case SMSportsTypeNHL:
+//                break;
+//            default:
+//                break;
+//        }
+//    }
 }
+
+
+- (void)categoryButtonPressed:(UIBarButtonItem *)sender {
+    [self performSegueWithIdentifier:@"CategoriesViewController" sender:sender];
+}
+
 
 - (IBAction)segmentControlAction:(UISegmentedControl *)sender {
     switch (sender.selectedSegmentIndex) {
         case 0:
             NSLog(@"0");
-//            self.displayGames = self.todayGames;
+            [self getTodaysGames];
+            [self.tableView reloadData];
             break;
         case 1:
             NSLog(@"1");
-//            self.displayGames = self.tomorrowGames;
+            self.displayGames = self.tomorrowGames;
+            [self.tableView reloadData];
             break;
         case 2:
             NSLog(@"2");
-//            self.displayGames = self.favoriteGames;
+            self.displayGames = self.favoriteGames;
+            [self.tableView reloadData];
             break;
         default:
             break;
@@ -62,12 +116,17 @@
 
 #pragma UITableViewControllerDelegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 3;
+    return self.displayGames.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     GameMatchCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GameMatchCell" forIndexPath:indexPath];
-    
+    Game *game = self.displayGames[indexPath.row];
+    cell.homeTeamImageView.image = game.homeTeam.logo;
+    cell.awayTeamImageView.image = game.awayTeam.logo;
+    cell.homeTeamNameLabel.text = game.homeTeam.name;
+    cell.awayTeamNameLabel.text = game.awayTeam.name;
+    cell.scheduledTimeLabel.text = game.gameDate;
     return cell;
 }
 

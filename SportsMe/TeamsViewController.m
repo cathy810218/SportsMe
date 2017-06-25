@@ -14,7 +14,7 @@
 @interface TeamsViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
-@property (strong, nonatomic) NSMutableArray *teams;
+@property (strong, nonatomic) NSArray *teams;
 @end
 
 @implementation TeamsViewController
@@ -29,15 +29,8 @@
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.estimatedRowHeight = 120;
     [SportsAPI fetchAllTeamsWithSportsType:self.sportsType completion:^(NSArray *teams) {
+        self.teams = teams;
     }];
-    
-    // Test data
-    Team *team = [[Team alloc] initWithTeamName:@"Cat" andCity:@"Seattle"];
-    team.logo = [UIImage imageNamed:@"nfl"];
-    for (int i = 0; i < 10; i++) {
-        [self.teams addObject: team];
-    }
-    [self.tableView reloadData];
 }
 
 - (IBAction)selectAllAction:(UIBarButtonItem *)sender {

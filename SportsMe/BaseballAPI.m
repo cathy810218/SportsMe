@@ -15,13 +15,13 @@
 
 @implementation BaseballAPI
 
--(NSString *)getTodaysDate{
+- (NSString *)getTodaysDate{
     self.dateFormatter = [[NSDateFormatter alloc]init];
     [self.dateFormatter setDateFormat:@"yyyy/MM/dd"];
     return [self.dateFormatter stringFromDate:[NSDate date]];
 }
 
--(NSString *)getTomorrowsDate{
+- (NSString *)getTomorrowsDate{
     NSDateComponents *dayComponent = [[NSDateComponents alloc] init];
     dayComponent.day = 1;
     
@@ -32,7 +32,7 @@
     return [self.dateFormatter stringFromDate:nextDate];
 }
 
--(void)fetchBaseballDataWithCompletion:(void (^)(NSArray *games))completion{
+- (void)fetchBaseballDataWithCompletion:(void (^)(NSArray *games))completion{
     NSString *todaysDate = [self getTodaysDate];
     NSError *error;
     NSString *urlString = [[NSString alloc] initWithFormat:@"https://api.sportradar.us/mlb-t5/games/%@/schedule.json?api_key=%@",todaysDate, secretKey];
@@ -51,7 +51,7 @@
     
 }
 
--(void)fetchTomorrowsBaseballDataWithCompletion:(void (^)(NSArray *games))completion{
+- (void)fetchTomorrowsBaseballDataWithCompletion:(void (^)(NSArray *games))completion{
     NSString *tomorrowsDate = [self getTomorrowsDate];
     NSError *error;
     NSString *urlString = [[NSString alloc] initWithFormat:@"https://api.sportradar.us/mlb-t5/games/%@/schedule.json?api_key=%@",tomorrowsDate, secretKey];
@@ -67,8 +67,35 @@
     }
     
     completion(gameObjects);
-    
 }
 
++ (void)fetchAllTeamsDataWithComletion:(void (^)(NSArray *AmericanLeagueTeams, NSArray *NationalLeagueTeams))completion {
+    NSError *error;
+    NSString *urlString = [[NSString alloc] initWithFormat:@"https://api.sportradar.us/mlb-t6/league/hierarchy.json?api_key=%@", secretKey];
+    NSURL *url = [[NSURL alloc] initWithString:urlString];
+    NSData *data = [NSData dataWithContentsOfURL:url];
+    NSDictionary *json =[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+    
+    NSMutableArray *alTeamArray = [[NSMutableArray alloc]init];
+    NSArray *divisions = json[@"leagues"][0][@"divisions"];
+    for (NSDictionary *obj in divisions) {
+        for (NSDictionary *alteam in obj[@"teams"]) {
+            Team *team = [[Team alloc] initWithTeamName:alteam[@"name"] andCity:alteam[@"market"]];
+            team.logo = [UIImage imageNamed:[NSString stringWithFormat:@"%@ %@", alteam[@"market"], alteam[@"name"]]];
+            [alTeamArray addObject:team];
+        }
+    }
+    
+    NSMutableArray *nlTeamArray = [[NSMutableArray alloc]init];
+    NSArray *divisions2 = json[@"leagues"][1][@"divisions"];
+    for (NSDictionary *obj in divisions2) {
+        for (NSDictionary *nlteam in obj[@"teams"]) {
+            Team *team = [[Team alloc] initWithTeamName:nlteam[@"name"] andCity:nlteam[@"market"]];
+            team.logo = [UIImage imageNamed:[NSString stringWithFormat:@"%@ %@", nlteam[@"market"], nlteam[@"name"]]];
+            [nlTeamArray addObject:team];
+        }
+    }
+    completion(alTeamArray, nlTeamArray);
+}
 
 @end

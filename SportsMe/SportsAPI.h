@@ -19,10 +19,13 @@ typedef NS_ENUM(NSUInteger, SMSportsType) {
     SMSportsTypeNHL
 };
 
-@interface SportsAPI : NSObject 
-+ (void)fetchGameMatchDataWithSportType:(SMSportsType)type completion:(void (^)(NSArray *games))completion;
+@interface SportsAPI : NSObject
 
--(void)fetchTommorrowsGameMatchDataWithSportType:(SMSportsType)type completion:(void (^)(NSArray *games))completion;
++ (NSDictionary *)sportsTypeDisplayNames;
+
++ (void)fetchGameMatchDataWithSportsType:(SMSportsType)type completion:(void (^)(NSArray *games))completion;
+
++ (void)fetchTommorrowsGameMatchDataWithSportsType:(SMSportsType)type completion:(void (^)(NSArray *games))completion;
 
 + (void)fetchAllTeamsWithSportsType:(SMSportsType)type completion:(void (^)(NSArray *teams))completion;
 
