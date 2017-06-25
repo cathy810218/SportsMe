@@ -10,10 +10,27 @@
 #import "APIKeys.h"
 #import "Game.h"
 @interface BaseballAPI()
-@property(strong, nonatomic) NSDateFormatter *dateFormatter;
+@property (strong, nonatomic) NSDateFormatter *dateFormatter;
+@property (strong, nonatomic) NSMutableDictionary *teamDictionary;
 @end
 
 @implementation BaseballAPI
+
++ (instancetype)shared {
+    static BaseballAPI *shared = nil;
+    
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        shared = [[self alloc] init];
+        shared.teamDictionary = [[NSMutableDictionary alloc] init];
+        shared.teams = [[NSMutableArray alloc] init];
+        [shared fetchAllTeamsDataWithComletion:^(NSArray *AmericanLeagueTeams, NSArray *NationalLeagueTeams) {
+            shared.teams = [AmericanLeagueTeams arrayByAddingObjectsFromArray:NationalLeagueTeams];
+        }];
+    });
+    return shared;
+}
+
 
 - (NSString *)getTodaysDate{
     self.dateFormatter = [[NSDateFormatter alloc]init];
@@ -40,10 +57,14 @@
     NSData *data = [NSData dataWithContentsOfURL:url];
     NSDictionary *json =[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
     NSArray *games = json[@"league"][@"games"];
-//    NSLog(@"Games: %@", games);
     NSMutableArray *gameObjects = [[NSMutableArray alloc]init];
     for (NSDictionary *dict in games) {
         Game *game = [[Game alloc]initWithMLBGame:dict];
+        NSString *homeKey = dict[@"home"][@"name"];
+        NSString *awayKey = dict[@"away"][@"name"];
+        game.homeTeam = self.teamDictionary[homeKey];
+        game.awayTeam = self.teamDictionary[awayKey];
+        
         [gameObjects addObject:game];
     }
 
@@ -69,7 +90,7 @@
     completion(gameObjects);
 }
 
-+ (void)fetchAllTeamsDataWithComletion:(void (^)(NSArray *AmericanLeagueTeams, NSArray *NationalLeagueTeams))completion {
+- (void)fetchAllTeamsDataWithComletion:(void (^)(NSArray *AmericanLeagueTeams, NSArray *NationalLeagueTeams))completion {
     NSError *error;
     NSString *urlString = [[NSString alloc] initWithFormat:@"https://api.sportradar.us/mlb-t6/league/hierarchy.json?api_key=%@", secretKey];
     NSURL *url = [[NSURL alloc] initWithString:urlString];
@@ -80,9 +101,12 @@
     NSArray *divisions = json[@"leagues"][0][@"divisions"];
     for (NSDictionary *obj in divisions) {
         for (NSDictionary *alteam in obj[@"teams"]) {
-            Team *team = [[Team alloc] initWithTeamName:alteam[@"name"] andCity:alteam[@"market"]];
-            team.logo = [UIImage imageNamed:[NSString stringWithFormat:@"%@ %@", alteam[@"market"], alteam[@"name"]]];
+            NSString *name = alteam[@"name"];
+            NSString *market = alteam[@"market"];
+            Team *team = [[Team alloc] initWithTeamName:name andCity:market];
+            team.logo = [UIImage imageNamed:[NSString stringWithFormat:@"%@ %@", market, name]];
             [alTeamArray addObject:team];
+            self.teamDictionary[name] = team;
         }
     }
     
@@ -90,9 +114,12 @@
     NSArray *divisions2 = json[@"leagues"][1][@"divisions"];
     for (NSDictionary *obj in divisions2) {
         for (NSDictionary *nlteam in obj[@"teams"]) {
-            Team *team = [[Team alloc] initWithTeamName:nlteam[@"name"] andCity:nlteam[@"market"]];
-            team.logo = [UIImage imageNamed:[NSString stringWithFormat:@"%@ %@", nlteam[@"market"], nlteam[@"name"]]];
+            NSString *name = nlteam[@"name"];
+            NSString *market = nlteam[@"market"];
+            Team *team = [[Team alloc] initWithTeamName:name andCity:market];
+            team.logo = [UIImage imageNamed:[NSString stringWithFormat:@"%@ %@", market, name]];
             [nlTeamArray addObject:team];
+            self.teamDictionary[name] = team;
         }
     }
     completion(alTeamArray, nlTeamArray);

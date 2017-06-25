@@ -11,10 +11,10 @@
 //TODO: NOT DONE!
 @implementation NSString (DateFormatter)
 
-- (void)formatDate:(NSDate *)date {
-    self.dateFormatter = [[NSDateFormatter alloc]init];
-    [self.dateFormatter setDateFormat:@"yyyy/MM/dd"];
-    return [self.dateFormatter stringFromDate:[NSDate date]];
-}
+//- (void)formatDate:(NSDate *)date {
+//    self.dateFormatter = [[NSDateFormatter alloc]init];
+//    [self.dateFormatter setDateFormat:@"yyyy/MM/dd"];
+//    return [self.dateFormatter stringFromDate:[NSDate date]];
+//}
 
 @end

@@ -7,6 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "BaseballAPI.h"
+#import "SoccerAPI.h"
+#import "BasketballAPI.h"
+#import "HockeyAPI.h"
+#import "DotaAPI.h"
+#import "LeagueOfLegendsAPI.h"
+#import "CounterStrikeAPI.h"
 
 typedef NS_ENUM(NSUInteger, SMSportsType) {
     SMSportsTypeESportLOL,

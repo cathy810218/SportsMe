@@ -8,6 +8,10 @@
 
 #import "Game.h"
 
+@interface Game()
+@property(strong, nonatomic) NSDateFormatter *dateFormatter;
+
+@end
 
 @implementation Game
 
@@ -24,8 +28,6 @@
 - (instancetype)initWithMLBGame:(NSDictionary *)object{
     self = [super init];
     if (self){
-        self.homeTeam = [[Team alloc] initWithTeamName:object[@"home"][@"name"] andCity:object[@"home"][@"market"]];
-        self.awayTeam = [[Team alloc] initWithTeamName:object[@"away"][@"name"] andCity:object[@"away"][@"market"]];
         self.gameDate = object[@"scheduled"];
         self.channel = object[@"broadcast"][@"network"];
         
@@ -88,12 +90,6 @@
     }
     
     return self;
-}
-
-- (NSString *)getTodaysDate{
-    self.dateFormatter = [[NSDateFormatter alloc]init];
-    [self.dateFormatter setDateFormat:@"yyyy/MM/dd"];
-    return [self.dateFormatter stringFromDate:[NSDate date]];
 }
 
 @end

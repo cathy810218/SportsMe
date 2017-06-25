@@ -8,13 +8,7 @@
 
 #import "SportsAPI.h"
 #import "APIKeys.h"
-#import "BaseballAPI.h"
-#import "SoccerAPI.h"
-#import "BasketballAPI.h"
-#import "HockeyAPI.h"
-#import "DotaAPI.h"
-#import "LeagueOfLegendsAPI.h"
-#import "CounterStrikeAPI.h"
+
 @interface SportsAPI()<NSXMLParserDelegate>
 
 @end
@@ -36,8 +30,7 @@
     switch (type) {
         case SMSportsTypeMLB:
         {
-            BaseballAPI *baseball = [[BaseballAPI alloc] init];
-            [baseball fetchBaseballDataWithCompletion:^(NSArray *games) {
+            [[BaseballAPI shared] fetchBaseballDataWithCompletion:^(NSArray *games) {
                 completion(games);
             }];
             break;
@@ -102,10 +95,7 @@
     switch (type) {
         case SMSportsTypeMLB:
         {
-            [BaseballAPI fetchAllTeamsDataWithComletion:^(NSArray *AmericanLeagueTeams, NSArray *NationalLeagueTeams) {
-                NSArray *array = [AmericanLeagueTeams arrayByAddingObjectsFromArray:NationalLeagueTeams];
-                completion(array);
-            }];
+            completion([BaseballAPI shared].teams);
             break;
         }
         case SMSportsTypeMLS:

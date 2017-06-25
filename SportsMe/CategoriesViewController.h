@@ -9,10 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "SportsAPI.h"
 
-@protocol CategoryViewControllerDelegate <NSObject>
-- (void)didSelectSportsType:(SMSportsType)type;
-@end
-
 @interface CategoriesViewController : UIViewController
-@property (weak, nonatomic) id<CategoryViewControllerDelegate> delegate;
+
 @end
