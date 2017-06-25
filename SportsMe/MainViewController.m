@@ -95,7 +95,11 @@
             self.displayGames = games;
         }];
     }
-    self.displayGames = array;
+    NSSortDescriptor *dateDescriptor = [NSSortDescriptor
+                                        sortDescriptorWithKey:@"gameDate"
+                                        ascending:YES];
+    NSArray *sortDescriptors = [NSArray arrayWithObject:dateDescriptor];
+    self.displayGames = [array sortedArrayUsingDescriptors:sortDescriptors];
 }
 
 
@@ -144,7 +148,7 @@
 
 - (NSString *)convertDateToString:(NSDate *)date {
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-    [dateFormat setDateFormat:@"HH:mm a"];
+    [dateFormat setDateFormat:@"hh:mm a"];
     NSString *str = [dateFormat stringFromDate:date];
     [dateFormat setTimeZone:[NSTimeZone systemTimeZone]];
     return str;
