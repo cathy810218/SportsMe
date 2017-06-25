@@ -162,6 +162,7 @@
 		3D5B612D1EFEE2B0001DB05A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3D5B613B1EFEE2B0001DB05A /* LaunchScreen.storyboard */,
 				CD970AA91EFF220A00BE5299 /* APIKeys.h */,
 				CD970AAA1EFF220A00BE5299 /* APIKeys.m */,
 				3D5B61301EFEE2B0001DB05A /* AppDelegate.h */,
@@ -203,7 +204,6 @@
 				3D69F7AD1EFF064500D16898 /* CategoryCell.h */,
 				3D69F7AE1EFF064500D16898 /* CategoryCell.m */,
 				3D69F7AF1EFF064500D16898 /* CategoryCell.xib */,
-				3D5B613B1EFEE2B0001DB05A /* LaunchScreen.storyboard */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -306,7 +306,7 @@
 				TargetAttributes = {
 					3D5B61291EFEE2AF001DB05A = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 6EJN6WTQBM;
+						DevelopmentTeam = 597HR9EHGW;
 						ProvisioningStyle = Automatic;
 					};
 					3D5B61421EFEE2B0001DB05A = {
@@ -611,7 +611,7 @@
 			baseConfigurationReference = C5B92F6DB2C9F58CE0396C6E /* Pods-SportsMe.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 6EJN6WTQBM;
+				DEVELOPMENT_TEAM = 597HR9EHGW;
 				INFOPLIST_FILE = SportsMe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cathyoun.SportsMe;
@@ -624,7 +624,7 @@
 			baseConfigurationReference = 1216D15E506C483184E3F85C /* Pods-SportsMe.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 6EJN6WTQBM;
+				DEVELOPMENT_TEAM = 597HR9EHGW;
 				INFOPLIST_FILE = SportsMe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cathyoun.SportsMe;

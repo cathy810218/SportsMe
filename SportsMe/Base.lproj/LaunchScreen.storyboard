@@ -40,6 +40,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ios" width="5175" height="9500"/>
+        <image name="ios" width="1242" height="2280"/>
     </resources>
 </document>
