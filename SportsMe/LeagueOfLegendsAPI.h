@@ -12,4 +12,6 @@
 
 -(void)fetchLoLDataWithCompletion:(void (^)(NSArray *games))completion;
 
+-(void)fetchTomorrowsLoLDataWithCompletion:(void (^)(NSArray *games))completion;
+
 @end
