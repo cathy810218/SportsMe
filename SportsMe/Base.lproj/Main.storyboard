@@ -12,7 +12,7 @@
         <!--SportsMe-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MainViewController" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="MainViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -21,22 +21,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ooP-ft-Gqe">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="200" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ooP-ft-Gqe">
+                                <rect key="frame" x="0.0" y="92" width="375" height="575"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="JnF-Wl-cwN">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="JnF-Wl-cwN">
                                 <rect key="frame" x="0.0" y="64" width="375" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="Today"/>
                                     <segment title="Tomorrow"/>
                                     <segment title="Favorite"/>
                                 </segments>
+                                <connections>
+                                    <action selector="segmentControlAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="9lo-Lz-jLW"/>
+                                </connections>
                             </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ooP-ft-Gqe" secondAttribute="trailing" id="9hB-mm-VNy"/>
+                            <constraint firstAttribute="trailing" secondItem="JnF-Wl-cwN" secondAttribute="trailing" id="9jw-4s-62j"/>
+                            <constraint firstItem="ooP-ft-Gqe" firstAttribute="top" secondItem="JnF-Wl-cwN" secondAttribute="bottom" id="aEs-lS-WHd"/>
+                            <constraint firstItem="JnF-Wl-cwN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="kBE-e5-Dta"/>
+                            <constraint firstItem="JnF-Wl-cwN" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="lUd-VP-KCH"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ooP-ft-Gqe" secondAttribute="bottom" id="pDn-gl-6O6"/>
+                            <constraint firstItem="ooP-ft-Gqe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="w0d-zW-6dK"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="SportsMe" id="SHw-5Y-1Iq">
                         <barButtonItem key="rightBarButtonItem" title="Categories" id="Qzb-X7-b2Z">
