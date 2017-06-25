@@ -10,6 +10,7 @@
 
 @interface HockeyAPI : NSObject
 - (void)fetchHockeyDataWithCompletion:(void (^)(NSArray *games))completion;
+- (void)fetchTommorrowsHockeyDataWithCompletion:(void (^)(NSArray *games))completion;
 
 
 @end
