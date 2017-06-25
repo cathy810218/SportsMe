@@ -19,4 +19,5 @@
 -(instancetype)initWithNFLGame:(NSDictionary *)object;
 
 - (instancetype)initWithMLBGame:(NSDictionary *)object;
+- (instancetype)initWithSoccerGame:(NSDictionary *)object;
 @end
