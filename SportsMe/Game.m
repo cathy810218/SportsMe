@@ -95,7 +95,7 @@
 - (NSDate *)formatDateWithDateString:(NSString *)dateStr{
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
     // set the date format related to what the string you have
-    [dateFormat setDateFormat:@"yyyy-MM-dd'T'HH:mm:ssZZZZ"];
+    [dateFormat setDateFormat:@"yyyy-MM-dd'T'HH:mm:ssZZZ"];
     NSDate *date = [dateFormat dateFromString:dateStr];
     [dateFormat setTimeZone:[NSTimeZone systemTimeZone]];
     // again add the date format what the output u need
