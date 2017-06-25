@@ -10,8 +10,14 @@
 
 @interface BaseballAPI : NSObject
 
+@property (strong, nonatomic) NSArray *teams;
+
++ (instancetype)shared;
+
 - (void)fetchBaseballDataWithCompletion:(void (^)(NSArray *games))completion;
 
--(void)fetchTomorrowsBaseballDataWithCompletion:(void (^)(NSArray *games))completion;
+- (void)fetchTomorrowsBaseballDataWithCompletion:(void (^)(NSArray *games))completion;
+
+- (void)fetchAllTeamsDataWithComletion:(void (^)(NSArray *AmericanLeagueTeams, NSArray *NationalLeagueTeams))completion;
 
 @end

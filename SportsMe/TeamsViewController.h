@@ -1,5 +1,5 @@
 //
-//  CategoryCell.h
+//  TeamsViewController.h
 //  SportsMe
 //
 //  Created by Cathy Oun on 6/24/17.
@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "SportsAPI.h"
 
-@interface CategoryCell : UICollectionViewCell
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@interface TeamsViewController : UIViewController
 @property (assign, nonatomic) SMSportsType sportsType;
+
 @end

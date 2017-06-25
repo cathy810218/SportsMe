@@ -7,21 +7,33 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "BaseballAPI.h"
+#import "SoccerAPI.h"
+#import "BasketballAPI.h"
+#import "HockeyAPI.h"
+#import "DotaAPI.h"
+#import "LeagueOfLegendsAPI.h"
+#import "CounterStrikeAPI.h"
 
 typedef NS_ENUM(NSUInteger, SMSportsType) {
+    SMSportsTypeMLB,
+    SMSportsTypeMLS,
     SMSportsTypeESportLOL,
     SMSportsTypeESportDOTA,
     SMSportsTypeESportCSGL,
-    SMSportsTypeNFL,
-    SMSportsTypeMLB,
     SMSportsTypeNBA,
-    SMSportsTypeMLS,
+    SMSportsTypeNFL,
     SMSportsTypeNHL
 };
 
-@interface SportsAPI : NSObject 
--(void)fetchGameMatchDataWithSportType:(SMSportsType)type completion:(void (^)(NSArray *games))completion;
+@interface SportsAPI : NSObject
 
--(void)fetchTommorrowsGameMatchDataWithSportType:(SMSportsType)type completion:(void (^)(NSArray *games))completion;
++ (NSString *)sportsTypeDisplayNames:(SMSportsType)type;
+
++ (void)fetchGameMatchDataWithSportsType:(SMSportsType)type completion:(void (^)(NSArray *games))completion;
+
++ (void)fetchTommorrowsGameMatchDataWithSportsType:(SMSportsType)type completion:(void (^)(NSArray *games))completion;
+
++ (void)fetchAllTeamsWithSportsType:(SMSportsType)type completion:(void (^)(NSArray *teams))completion;
 
 @end

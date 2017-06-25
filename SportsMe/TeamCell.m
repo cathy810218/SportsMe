@@ -1,14 +1,14 @@
 //
-//  GameMatchCell.m
+//  TeamCell.m
 //  SportsMe
 //
 //  Created by Cathy Oun on 6/24/17.
 //  Copyright © 2017 Cathy Oun. All rights reserved.
 //
 
-#import "GameMatchCell.h"
+#import "TeamCell.h"
 
-@implementation GameMatchCell
+@implementation TeamCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -20,7 +20,5 @@
 
     // Configure the view for the selected state
 }
-
-
 
 @end

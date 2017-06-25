@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SportsAPI.h"
 
 @interface CategoriesViewController : UIViewController
 

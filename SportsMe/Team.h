@@ -6,12 +6,13 @@
 //  Copyright © 2017 Cathy Oun. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
-@interface Team : NSObject
+@interface Team : NSObject <NSCoding>
 
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSString *city;
+@property (strong, nonatomic) UIImage *logo;
 
 - (instancetype)initWithTeamName:(NSString *)name andCity:(NSString *)city;
 @end

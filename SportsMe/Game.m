@@ -8,6 +8,10 @@
 
 #import "Game.h"
 
+@interface Game()
+@property(strong, nonatomic) NSDateFormatter *dateFormatter;
+
+@end
 
 @implementation Game
 
@@ -24,9 +28,7 @@
 - (instancetype)initWithMLBGame:(NSDictionary *)object{
     self = [super init];
     if (self){
-        self.homeTeam = [[Team alloc] initWithTeamName:object[@"home"][@"name"] andCity:object[@"home"][@"market"]];
-        self.awayTeam = [[Team alloc] initWithTeamName:object[@"away"][@"name"] andCity:object[@"away"][@"market"]];
-        self.gameDate = object[@"scheduled"];
+        self.gameDate = [self formatDateWithDateString:object[@"scheduled"]];
         self.channel = object[@"broadcast"][@"network"];
         
     }
@@ -89,5 +91,21 @@
     
     return self;
 }
+
+- (NSDate *)formatDateWithDateString:(NSString *)dateStr{
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    // set the date format related to what the string you have
+    [dateFormat setDateFormat:@"yyyy-MM-dd'T'HH:mm:ssZZZ"];
+    NSDate *date = [dateFormat dateFromString:dateStr];
+    [dateFormat setTimeZone:[NSTimeZone systemTimeZone]];
+    // again add the date format what the output u need
+    [dateFormat setDateFormat:@"yyyy-MM-dd HH:mm"];
+
+    NSString *finalDate = [dateFormat stringFromDate:date];
+    [dateFormat setDateFormat:@"yyyy-MM-dd HH:mm"];
+    NSDate *mydate = [dateFormat dateFromString:finalDate];
+    return mydate;
+}
+
 
 @end
