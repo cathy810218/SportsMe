@@ -33,6 +33,17 @@
     return self;
 }
 
+- (instancetype)initWithLoLGame:(NSDictionary *)object{
+    self = [super init];
+    if (self){
+        self.homeTeam = [[Team alloc] initWithTeamName:object[@"competitors"][0][@"name"] andCity:object[@"competitors"][0][@"country"]];
+        self.awayTeam = [[Team alloc] initWithTeamName:object[@"competitors"][1][@"name"] andCity:object[@"competitors"][1][@"country"]];
+        self.gameDate = object[@"scheduled"];
+    }
+
+    return self;
+}
+
 - (instancetype)initWithSoccerGame:(NSDictionary *)object{
     self = [super init];
     if (self){
@@ -41,7 +52,7 @@
         self.awayTeam = [[Team alloc] initWithTeamName:object[@"competitors"][1][@"name"] andCity:object[@"competitors"][1][@"country"]];
         self.gameDate = object[@"scheduled"];
     }
-    
+
     return self;
 }
 
