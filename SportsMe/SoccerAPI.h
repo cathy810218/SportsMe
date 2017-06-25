@@ -1,5 +1,5 @@
 //
-//  BaseballAPI.h
+//  SoccerAPI.h
 //  SportsMe
 //
 //  Created by Elyanil Liranzo Castro on 6/24/17.
@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-@interface BaseballAPI : NSObject
-- (void)fetchBaseballDataWithCompletion:(void (^)(NSArray *games))completion;
+@interface SoccerAPI : NSObject
+-(void)beginParsing;
+
+
 @end

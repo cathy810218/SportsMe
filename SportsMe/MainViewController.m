@@ -9,8 +9,6 @@
 #import "MainViewController.h"
 #import "GameMatchCell.h"
 #import "SportsAPI.h"
-#import "BaseballAPI.h"
-#import "LeagueOfLegendsAPI.h"
 
 @interface MainViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -25,19 +23,12 @@
 @implementation MainViewController
 
 - (void)viewDidLoad {
-    
-//    BaseballAPI *baseball = [[BaseballAPI alloc]init];
-//    [baseball beginParsing];
-    
-    LeagueOfLegendsAPI *lol = [[LeagueOfLegendsAPI alloc] init];
-    [lol fetchLoLDataWithCompletion:^(NSArray *games) {
-        
-    }];
 
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+
     
     UINib *nib = [UINib nibWithNibName:@"GameMatchCell" bundle:[NSBundle mainBundle]];
     [self.tableView registerNib:nib forCellReuseIdentifier:@"GameMatchCell"];
@@ -45,6 +36,9 @@
     self.tableView.estimatedRowHeight = 300;
     
     [self fetchTodaysGames];
+    
+    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"nav_bg.png"] forBarMetrics:UIBarMetricsDefault];
+
 }
 
 - (void)fetchTodaysGames {

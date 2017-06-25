@@ -21,4 +21,7 @@
 - (instancetype)initWithMLBGame:(NSDictionary *)object;
 
 - (instancetype)initWithLoLGame:(NSDictionary *)object;
+
+- (instancetype)initWithSoccerGame:(NSDictionary *)object;
+
 @end

@@ -8,6 +8,7 @@
 
 #import "SportsAPI.h"
 #import "APIKeys.h"
+#import "BaseballAPI.h"
 @interface SportsAPI()<NSXMLParserDelegate>
 
 @property(strong, nonatomic) NSXMLParser *xmlParser;
@@ -16,16 +17,44 @@
 @end
 @implementation SportsAPI
 
-// -(void)fetchGameMatchDataWithSportType:(SMSportsType)type completion:(void (^)(NSArray *cats))completion {
-//     switch (type) {
-//         case SMSportsTypeESports:
-//             break;
-//         case SMSportsTypeMLB:
-//             [SportMLBAPI beginParsing];
-//             break;
-//     }
-// }
- 
+ -(void)fetchGameMatchDataWithSportType:(SMSportsType)type completion:(void (^)(NSArray *games))completion {
+     switch (type) {
+         case SMSportsTypeMLB:
+         {
+             BaseballAPI *baseball = [[BaseballAPI alloc] init];
+             [baseball fetchBaseballDataWithCompletion:^(NSArray *games) {
+                 completion(games);
+             }];
+             break;
+         }
+         case SMSportsTypeMLS:
+         {
+             break;
+         }
+         case SMSportsTypeESportDOTA:
+         {
+             
+         }
+         case SMSportsTypeESportLOL:
+         {
+             
+         }
+         case SMSportsTypeESportCSGL:
+         {
+             
+         }
+         case SMSportsTypeNBA:
+         {
+             
+         }
+        case SMSportsTypeNFL:
+         {
+             
+         }
+
+     }
+ }
+
 
 
 

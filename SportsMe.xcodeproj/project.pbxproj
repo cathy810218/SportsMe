@@ -26,6 +26,7 @@
 		71E5C0381EFF4A1E0011A455 /* LeagueOfLegendsAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 71E5C0371EFF4A1E0011A455 /* LeagueOfLegendsAPI.m */; };
 		7BFB7AA29AEB654BF0D5F4AC /* libPods-SportsMeTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C104C4FAF7E6A313D8118C97 /* libPods-SportsMeTests.a */; };
 		CD1DC30E1EFF2F3E00E89E51 /* BaseballAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = CD1DC30D1EFF2F3E00E89E51 /* BaseballAPI.m */; };
+		CD1DC3111EFF469B00E89E51 /* SoccerAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = CD1DC3101EFF469B00E89E51 /* SoccerAPI.m */; };
 		CD970AAB1EFF220A00BE5299 /* APIKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = CD970AAA1EFF220A00BE5299 /* APIKeys.m */; };
 /* End PBXBuildFile section */
 
@@ -76,6 +77,8 @@
 		C5B92F6DB2C9F58CE0396C6E /* Pods-SportsMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportsMe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SportsMe/Pods-SportsMe.debug.xcconfig"; sourceTree = "<group>"; };
 		CD1DC30C1EFF2F3E00E89E51 /* BaseballAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseballAPI.h; sourceTree = "<group>"; };
 		CD1DC30D1EFF2F3E00E89E51 /* BaseballAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseballAPI.m; sourceTree = "<group>"; };
+		CD1DC30F1EFF469B00E89E51 /* SoccerAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoccerAPI.h; sourceTree = "<group>"; };
+		CD1DC3101EFF469B00E89E51 /* SoccerAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoccerAPI.m; sourceTree = "<group>"; };
 		CD970AA91EFF220A00BE5299 /* APIKeys.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIKeys.h; sourceTree = "<group>"; };
 		CD970AAA1EFF220A00BE5299 /* APIKeys.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APIKeys.m; sourceTree = "<group>"; };
 		E01174D67A87FDD781492DB6 /* Pods-SportsMeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportsMeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SportsMeTests/Pods-SportsMeTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -213,6 +216,8 @@
 				CD1DC30D1EFF2F3E00E89E51 /* BaseballAPI.m */,
 				71E5C0361EFF4A1E0011A455 /* LeagueOfLegendsAPI.h */,
 				71E5C0371EFF4A1E0011A455 /* LeagueOfLegendsAPI.m */,
+				CD1DC30F1EFF469B00E89E51 /* SoccerAPI.h */,
+				CD1DC3101EFF469B00E89E51 /* SoccerAPI.m */,
 			);
 			name = APIs;
 			sourceTree = "<group>";
@@ -435,6 +440,7 @@
 				3D5B61351EFEE2B0001DB05A /* MainViewController.m in Sources */,
 				3D69F7B01EFF064500D16898 /* CategoryCell.m in Sources */,
 				71E5C0381EFF4A1E0011A455 /* LeagueOfLegendsAPI.m in Sources */,
+				CD1DC3111EFF469B00E89E51 /* SoccerAPI.m in Sources */,
 				71E5C0321EFF0E890011A455 /* SportsAPI.m in Sources */,
 				CD970AAB1EFF220A00BE5299 /* APIKeys.m in Sources */,
 				3D5B61591EFEE9B5001DB05A /* GameMatchCell.m in Sources */,
