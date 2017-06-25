@@ -12,6 +12,7 @@
 
 @interface CategoriesViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (strong, nonatomic) NSArray *buttonImages;
 
 @end
 
@@ -24,6 +25,8 @@
     
     UINib *nib = [UINib nibWithNibName:@"CategoryCell" bundle:[NSBundle mainBundle]];
     [self.collectionView registerNib:nib forCellWithReuseIdentifier:@"CategoryCell"];
+    
+    self.buttonImages = @[@"mlb", @"mls", @"esports", @"nba", @"nfl"];
 }
 
 
@@ -35,7 +38,8 @@
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     CategoryCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CategoryCell" forIndexPath:indexPath];
-    
+    UIImage *img = [UIImage imageNamed:self.buttonImages[indexPath.row]];
+    cell.imageView.image = img;
     return cell;
 }
 

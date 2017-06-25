@@ -22,7 +22,9 @@
          case SMSportsTypeMLB:
          {
              BaseballAPI *baseball = [[BaseballAPI alloc] init];
-             [baseball beginParsing];
+             [baseball fetchBaseballDataWithCompletion:^(NSArray *games) {
+                 completion(games);
+             }];
              break;
          }
          case SMSportsTypeMLS:

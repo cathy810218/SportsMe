@@ -28,6 +28,7 @@
     // Do any additional setup after loading the view, typically from a nib.
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+
     
     UINib *nib = [UINib nibWithNibName:@"GameMatchCell" bundle:[NSBundle mainBundle]];
     [self.tableView registerNib:nib forCellReuseIdentifier:@"GameMatchCell"];

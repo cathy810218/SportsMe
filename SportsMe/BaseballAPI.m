@@ -37,7 +37,7 @@
         Game *game = [[Game alloc]initWithMLBGame:dict];
         [gameObjects addObject:game];
     }
-    completion(games);
+    completion(gameObjects);
     
 }
 
